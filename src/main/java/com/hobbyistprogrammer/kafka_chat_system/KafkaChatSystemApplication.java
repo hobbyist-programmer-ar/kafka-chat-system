@@ -8,6 +8,8 @@ public class KafkaChatSystemApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(KafkaChatSystemApplication.class, args);
+
+
 	}
 
 }
