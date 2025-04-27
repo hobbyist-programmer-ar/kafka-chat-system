@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class KafkaChatSystemApplication {
 
 	public static void main(String[] args) {
+		int val = 0;
 		SpringApplication.run(KafkaChatSystemApplication.class, args);
 	}
 
