@@ -13,4 +13,6 @@ public class Message {
     String message;
     LocalDateTime createdAt;
     Boolean isDelivered;
+    Boolean isFlagged;
+    String flagReason;
 }
