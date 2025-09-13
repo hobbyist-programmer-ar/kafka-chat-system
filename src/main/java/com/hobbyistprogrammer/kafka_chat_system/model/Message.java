@@ -15,4 +15,5 @@ public class Message {
     Boolean isDelivered;
     Boolean isFlagged;
     String flagReason;
+    Boolean isNSFW;
 }
