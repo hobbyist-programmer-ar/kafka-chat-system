@@ -77,8 +77,8 @@
       ],
       "description": "## Overview\n[ch.qos.logback:logback-core](https://mvnrepository.com/artifact/ch.qos.logback/logback-core) is a logback-core module.\n\nAffected versions of this package are vulnerable to External Initialization of Trusted Variables or Data Stores via the conditional processing of the `logback.xml` configuration file when both the Janino library and Spring Framework are present on the class path. An attacker can execute arbitrary code by compromising an existing configuration file or injecting a malicious environment variable before program execution. This is only exploitable if the attacker has write access to a configuration file or can set a malicious environment variable.\n## Remediation\nUpgrade `ch.qos.logback:logback-core` to version 1.5.19 or higher.\n## References\n- [GitHub Commit](https://github.com/qos-ch/logback/commit/61f6a2544f36b3016e0efd434ee21f19269f1df7)\n- [Release Notes](https://logback.qos.ch/news.html#1.5.19)\n",
       "epssDetails": {
-        "percentile": "0.11758",
-        "probability": "0.00040",
+        "percentile": "0.22133",
+        "probability": "0.00071",
         "modelVersion": "v2025.03.14"
       },
       "identifiers": {
@@ -122,12 +122,13 @@
       "severityWithCritical": "medium",
       "from": [
         "com.hobbyistprogrammer:kafka-chat-system@0.0.1-SNAPSHOT",
-        "org.springframework.kafka:spring-kafka-test@3.3.9",
-        "org.apache.zookeeper:zookeeper@3.8.4",
         "ch.qos.logback:logback-core@1.5.18"
       ],
-      "upgradePath": [],
-      "isUpgradable": false,
+      "upgradePath": [
+        false,
+        "ch.qos.logback:logback-core@1.5.19"
+      ],
+      "isUpgradable": true,
       "isPatchable": false,
       "name": "ch.qos.logback:logback-core",
       "version": "1.5.18"
@@ -256,8 +257,8 @@
       ],
       "description": "## Overview\n[io.netty:netty-codec-http](https://mvnrepository.com/artifact/io.netty/netty-codec-http) is a network application framework for rapid development of maintainable high performance protocol servers & clients.\n\nAffected versions of this package are vulnerable to HTTP Request Smuggling via the parsing of chunk extensions in HTTP/1.1 messages with chunked encoding. An attacker can bypass HTTP request boundaries by sending specially crafted HTTP requests that exploit differences in how standalone newline characters are parsed between reverse proxies and the backend, potentially allowing them to smuggle additional requests.\n## Remediation\nUpgrade `io.netty:netty-codec-http` to version 4.1.125.Final, 4.2.5.Final or higher.\n## References\n- [GitHub Commit](https://github.com/netty/netty/commit/39d3ecf8f0c57a7469ba927b2163d4cb4314b138)\n- [GitHub Commit](https://github.com/netty/netty/commit/edb55fd8e0a3bcbd85881e423464f585183d1284)\n- [GitHub Issue](https://github.com/JLLeitschuh/unCVEed/issues/1)\n- [GitHub Issue](https://github.com/netty/netty/issues/15522)\n- [GitHub PR](https://github.com/netty/netty/pull/15611)\n",
       "epssDetails": {
-        "percentile": "0.05987",
-        "probability": "0.00026",
+        "percentile": "0.06940",
+        "probability": "0.00027",
         "modelVersion": "v2025.03.14"
       },
       "identifiers": {
@@ -306,17 +307,11 @@
       "severityWithCritical": "high",
       "from": [
         "com.hobbyistprogrammer:kafka-chat-system@0.0.1-SNAPSHOT",
-        "org.springframework.boot:spring-boot-starter-webflux@3.4.9",
-        "org.springframework.boot:spring-boot-starter-reactor-netty@3.4.9",
-        "io.projectreactor.netty:reactor-netty-http@1.2.9",
         "io.netty:netty-codec-http@4.1.124.Final"
       ],
       "upgradePath": [
         false,
-        "org.springframework.boot:spring-boot-starter-webflux@3.4.10",
-        "org.springframework.boot:spring-boot-starter-reactor-netty@3.4.10",
-        "io.projectreactor.netty:reactor-netty-http@1.2.10",
-        "io.netty:netty-codec-http@4.1.127.Final"
+        "io.netty:netty-codec-http@4.1.125.Final"
       ],
       "isUpgradable": true,
       "isPatchable": false,
@@ -362,18 +357,18 @@
       ],
       "cvssDetails": [
         {
-          "assigner": "NVD",
-          "severity": "high",
-          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-          "cvssV3BaseScore": 7.5,
-          "modificationTime": "2025-09-09T01:13:28.751869Z"
-        },
-        {
           "assigner": "Red Hat",
           "severity": "medium",
           "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
           "cvssV3BaseScore": 5.3,
           "modificationTime": "2025-09-04T06:14:17.723231Z"
+        },
+        {
+          "assigner": "NVD",
+          "severity": "high",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 7.5,
+          "modificationTime": "2025-09-09T01:13:28.751869Z"
         },
         {
           "assigner": "SUSE",
@@ -404,21 +399,21 @@
         },
         {
           "type": "secondary",
-          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-          "assigner": "NVD",
-          "severity": "high",
-          "baseScore": 7.5,
-          "cvssVersion": "3.1",
-          "modificationTime": "2025-09-09T01:13:28.751869Z"
-        },
-        {
-          "type": "secondary",
           "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
           "assigner": "Red Hat",
           "severity": "medium",
           "baseScore": 5.3,
           "cvssVersion": "3.1",
           "modificationTime": "2025-09-04T06:14:17.723231Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "assigner": "NVD",
+          "severity": "high",
+          "baseScore": 7.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-09-09T01:13:28.751869Z"
         },
         {
           "type": "secondary",
@@ -432,8 +427,8 @@
       ],
       "description": "## Overview\n[io.netty:netty-codec-http](https://mvnrepository.com/artifact/io.netty/netty-codec-http) is a network application framework for rapid development of maintainable high performance protocol servers & clients.\n\nAffected versions of this package are vulnerable to Improper Handling of Highly Compressed Data (Data Amplification) via the `BrotliDecoder.decompress` function, which has no limit on how often it calls `pull`, decompressing data 64K bytes at a time. An attacker can exhaust system memory and cause application downtime by submitting specially crafted compressed input that triggers excessive buffer allocations.\n## PoC\n``` java\r\nimport io.netty.buffer.Unpooled;\r\nimport io.netty.channel.embedded.EmbeddedChannel;\r\n\r\nimport java.util.Base64;\r\n\r\npublic class T {\r\n    public static void main(String[] args) {\r\n        EmbeddedChannel channel = new EmbeddedChannel(new BrotliDecoder());\r\n        channel.writeInbound(Unpooled.wrappedBuffer(Base64.getDecoder().decode(\"aPpxD1tETigSAGj6cQ8vRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROMBIAEgIaHwBETlQQVFcXlgA=\")));\r\n    }\r\n}\r\n```\n## Remediation\nUpgrade `io.netty:netty-codec-http` to version 4.1.125.Final or higher.\n## References\n- [GitHub Commit](https://github.com/netty/netty/commit/34894ac73b02efefeacd9c0972780b32dc3de04f)\n- [GitHub Commit](https://github.com/netty/netty/commit/9d804c54ce962408ae6418255a83a13924f7145d)\n",
       "epssDetails": {
-        "percentile": "0.08598",
-        "probability": "0.00033",
+        "percentile": "0.21748",
+        "probability": "0.00070",
         "modelVersion": "v2025.03.14"
       },
       "identifiers": {
@@ -482,17 +477,163 @@
       "severityWithCritical": "high",
       "from": [
         "com.hobbyistprogrammer:kafka-chat-system@0.0.1-SNAPSHOT",
-        "org.springframework.boot:spring-boot-starter-webflux@3.4.9",
-        "org.springframework.boot:spring-boot-starter-reactor-netty@3.4.9",
-        "io.projectreactor.netty:reactor-netty-http@1.2.9",
         "io.netty:netty-codec-http@4.1.124.Final"
       ],
       "upgradePath": [
         false,
-        "org.springframework.boot:spring-boot-starter-webflux@3.4.10",
-        "org.springframework.boot:spring-boot-starter-reactor-netty@3.4.10",
-        "io.projectreactor.netty:reactor-netty-http@1.2.10",
-        "io.netty:netty-codec-http@4.1.127.Final"
+        "io.netty:netty-codec-http@4.1.125.Final"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "io.netty:netty-codec-http",
+      "version": "4.1.124.Final"
+    },
+    {
+      "id": "SNYK-JAVA-IONETTY-14423947",
+      "title": "CRLF Injection",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N/E:P",
+      "credit": [
+        "nakyamad"
+      ],
+      "semver": {
+        "vulnerable": [
+          "[,4.1.129.Final)",
+          "[4.2.0.Alpha1,4.2.8.Final)"
+        ]
+      },
+      "exploit": "Proof of Concept",
+      "fixedIn": [
+        "4.1.129.Final",
+        "4.2.8.Final"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "java",
+      "severity": "medium",
+      "cvssScore": 6.9,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "io.netty:netty-codec-http",
+      "references": [
+        {
+          "url": "https://github.com/netty/netty/commit/77e81f1e5944d98b3acf887d3aa443b252752e94",
+          "title": "GitHub Commit"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+          "cvssV3BaseScore": 6.5,
+          "modificationTime": "2025-12-17T13:39:21.807243Z"
+        },
+        {
+          "assigner": "SUSE",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+          "cvssV3BaseScore": 6.5,
+          "modificationTime": "2025-12-20T11:08:56.940330Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N/E:P",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 6.9,
+          "cvssVersion": "4.0",
+          "modificationTime": "2025-12-23T10:13:24.173875Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N/E:P",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 6.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-12-23T10:13:24.173875Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "baseScore": 6.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-12-17T13:39:21.807243Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+          "assigner": "SUSE",
+          "severity": "medium",
+          "baseScore": 6.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-12-20T11:08:56.940330Z"
+        }
+      ],
+      "description": "## Overview\n[io.netty:netty-codec-http](https://mvnrepository.com/artifact/io.netty/netty-codec-http) is a network application framework for rapid development of maintainable high performance protocol servers & clients.\n\nAffected versions of this package are vulnerable to CRLF Injection in `HttpRequestEncoder`, due to improper sanitization of a URI with line-breaks in the `DefaultHttpRequest` class. An attacker can manipulate HTTP requests to cause parser desynchronization, request smuggling, and response splitting by including line break characters in requests.\n## PoC\n```java\r\n\r\npublic static void main(String[] args) {\r\n\r\n  EmbeddedChannel client = new EmbeddedChannel();\r\n  client.pipeline().addLast(new HttpClientCodec());\r\n\r\n  EmbeddedChannel server = new EmbeddedChannel();\r\n  server.pipeline().addLast(new HttpServerCodec());\r\n  server.pipeline().addLast(new ChannelInboundHandlerAdapter() {\r\n    @Override\r\n    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {\r\n      System.out.println(\"Processing msg \" + msg);\r\n    }\r\n  });\r\n\r\n  DefaultHttpRequest request = new DefaultHttpRequest(\r\n    HttpVersion.HTTP_1_1,\r\n    HttpMethod.GET,\r\n    \"/s1 HTTP/1.1\\r\\n\" +\r\n      \"\\r\\n\" +\r\n      \"POST /s2 HTTP/1.1\\r\\n\" +\r\n      \"content-length: 11\\r\\n\\r\\n\" +\r\n      \"Hello World\" +\r\n      \"GET /s1\"\r\n  );\r\n  client.writeAndFlush(request);\r\n  ByteBuf tmp;\r\n  while ((tmp = client.readOutbound()) != null) {\r\n    server.writeInbound(tmp);\r\n  }\r\n}\r\n```\n## Remediation\nUpgrade `io.netty:netty-codec-http` to version 4.1.129.Final, 4.2.8.Final or higher.\n## References\n- [GitHub Commit](https://github.com/netty/netty/commit/77e81f1e5944d98b3acf887d3aa443b252752e94)\n",
+      "epssDetails": {
+        "percentile": "0.15727",
+        "probability": "0.00050",
+        "modelVersion": "v2025.03.14"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2025-67735"
+        ],
+        "CWE": [
+          "CWE-93"
+        ],
+        "GHSA": [
+          "GHSA-84h7-rjj3-6jx4"
+        ]
+      },
+      "packageName": "io.netty:netty-codec-http",
+      "proprietary": false,
+      "creationTime": "2025-12-16T09:46:21.339192Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2025-12-15T23:28:49Z",
+      "exploitDetails": {
+        "sources": [
+          "Snyk"
+        ],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Proof of Concept",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Proof of Concept",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "maven",
+      "mavenModuleName": {
+        "groupId": "io.netty",
+        "artifactId": "netty-codec-http"
+      },
+      "publicationTime": "2025-12-16T09:46:21.855513Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2025-12-23T10:13:24.173875Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "medium",
+      "from": [
+        "com.hobbyistprogrammer:kafka-chat-system@0.0.1-SNAPSHOT",
+        "io.netty:netty-codec-http@4.1.124.Final"
+      ],
+      "upgradePath": [
+        false,
+        "io.netty:netty-codec-http@4.1.129.Final"
       ],
       "isUpgradable": true,
       "isPatchable": false,
@@ -538,18 +679,18 @@
       ],
       "cvssDetails": [
         {
-          "assigner": "NVD",
-          "severity": "high",
-          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-          "cvssV3BaseScore": 7.5,
-          "modificationTime": "2025-09-09T01:13:28.751869Z"
-        },
-        {
           "assigner": "Red Hat",
           "severity": "medium",
           "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
           "cvssV3BaseScore": 5.3,
           "modificationTime": "2025-09-04T06:14:17.723231Z"
+        },
+        {
+          "assigner": "NVD",
+          "severity": "high",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 7.5,
+          "modificationTime": "2025-09-09T01:13:28.751869Z"
         },
         {
           "assigner": "SUSE",
@@ -580,21 +721,21 @@
         },
         {
           "type": "secondary",
-          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-          "assigner": "NVD",
-          "severity": "high",
-          "baseScore": 7.5,
-          "cvssVersion": "3.1",
-          "modificationTime": "2025-09-09T01:13:28.751869Z"
-        },
-        {
-          "type": "secondary",
           "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
           "assigner": "Red Hat",
           "severity": "medium",
           "baseScore": 5.3,
           "cvssVersion": "3.1",
           "modificationTime": "2025-09-04T06:14:17.723231Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "assigner": "NVD",
+          "severity": "high",
+          "baseScore": 7.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-09-09T01:13:28.751869Z"
         },
         {
           "type": "secondary",
@@ -608,8 +749,8 @@
       ],
       "description": "## Overview\n[io.netty:netty-codec-http2](http://netty.io/) is a HTTP2 sub package for the netty library, an event-driven asynchronous network application framework.\n\nAffected versions of this package are vulnerable to Improper Handling of Highly Compressed Data (Data Amplification) via the `BrotliDecoder.decompress` function, which has no limit on how often it calls `pull`, decompressing data 64K bytes at a time. An attacker can exhaust system memory and cause application downtime by submitting specially crafted compressed input that triggers excessive buffer allocations.\n## PoC\n``` java\r\nimport io.netty.buffer.Unpooled;\r\nimport io.netty.channel.embedded.EmbeddedChannel;\r\n\r\nimport java.util.Base64;\r\n\r\npublic class T {\r\n    public static void main(String[] args) {\r\n        EmbeddedChannel channel = new EmbeddedChannel(new BrotliDecoder());\r\n        channel.writeInbound(Unpooled.wrappedBuffer(Base64.getDecoder().decode(\"aPpxD1tETigSAGj6cQ8vRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROKBIAaPpxD1tETigSAGj6cQ9bRE4oEgBo+nEPW0ROMBIAEgIaHwBETlQQVFcXlgA=\")));\r\n    }\r\n}\r\n```\n## Remediation\nUpgrade `io.netty:netty-codec-http2` to version 4.1.125.Final or higher.\n## References\n- [GitHub Commit](https://github.com/netty/netty/commit/34894ac73b02efefeacd9c0972780b32dc3de04f)\n- [GitHub Commit](https://github.com/netty/netty/commit/9d804c54ce962408ae6418255a83a13924f7145d)\n",
       "epssDetails": {
-        "percentile": "0.08598",
-        "probability": "0.00033",
+        "percentile": "0.21748",
+        "probability": "0.00070",
         "modelVersion": "v2025.03.14"
       },
       "identifiers": {
@@ -658,17 +799,11 @@
       "severityWithCritical": "high",
       "from": [
         "com.hobbyistprogrammer:kafka-chat-system@0.0.1-SNAPSHOT",
-        "org.springframework.boot:spring-boot-starter-webflux@3.4.9",
-        "org.springframework.boot:spring-boot-starter-reactor-netty@3.4.9",
-        "io.projectreactor.netty:reactor-netty-http@1.2.9",
         "io.netty:netty-codec-http2@4.1.124.Final"
       ],
       "upgradePath": [
         false,
-        "org.springframework.boot:spring-boot-starter-webflux@3.4.10",
-        "org.springframework.boot:spring-boot-starter-reactor-netty@3.4.10",
-        "io.projectreactor.netty:reactor-netty-http@1.2.10",
-        "io.netty:netty-codec-http2@4.1.127.Final"
+        "io.netty:netty-codec-http2@4.1.125.Final"
       ],
       "isUpgradable": true,
       "isPatchable": false,
@@ -762,8 +897,8 @@
       ],
       "description": "## Overview\n[org.apache.kafka:kafka-clients](http://kafka.apache.org/) is a streaming platform that can publish and subscribe to streams of records, store streams of records in a fault-tolerant durable way, and process streams of records as they occur.\n\nAffected versions of this package are vulnerable to Server-side Request Forgery (SSRF) due to the improper handling of `sasl.oauthbearer.token.endpoint.url` and `sasl.oauthbearer.jwks.endpoint.url` configurations. An attacker can read arbitrary contents of the disk and environment variables or make requests to an unintended location by manipulating these configurations.\r\n\r\n**Note:**\r\nThis is only exploitable if configurations can be specified by an untrusted party.\n## Remediation\nUpgrade `org.apache.kafka:kafka-clients` to version 3.9.1 or higher.\n## References\n- [Apache Kafka](https://kafka.apache.org/cve-list)\n- [GitHub Commit](https://github.com/apache/kafka/commit/35829fddcbcf375eb0462d07a51bf8becb1b8757)\n- [OSS Security Advisory](http://www.openwall.com/lists/oss-security/2025/06/09/1)\n- [PoC in GitHub](https://github.com/kk12-30/CVE-2025-27817)\n",
       "epssDetails": {
-        "percentile": "0.08431",
-        "probability": "0.00032",
+        "percentile": "0.11753",
+        "probability": "0.00039",
         "modelVersion": "v2025.03.14"
       },
       "identifiers": {
@@ -812,11 +947,13 @@
       "severityWithCritical": "high",
       "from": [
         "com.hobbyistprogrammer:kafka-chat-system@0.0.1-SNAPSHOT",
-        "org.springframework.kafka:spring-kafka@3.3.9",
         "org.apache.kafka:kafka-clients@3.8.1"
       ],
-      "upgradePath": [],
-      "isUpgradable": false,
+      "upgradePath": [
+        false,
+        "org.apache.kafka:kafka-clients@3.9.1"
+      ],
+      "isUpgradable": true,
       "isPatchable": false,
       "name": "org.apache.kafka:kafka-clients",
       "version": "3.8.1"
@@ -904,8 +1041,8 @@
       ],
       "description": "## Overview\n[org.apache.kafka:kafka-clients](http://kafka.apache.org/) is a streaming platform that can publish and subscribe to streams of records, store streams of records in a fault-tolerant durable way, and process streams of records as they occur.\n\nAffected versions of this package are vulnerable to Deserialization of Untrusted Data via the `JndiLoginModule` process in the SASL authentication mechanism. An attacker can execute arbitrary code or cause a denial of service by supplying a malicious JNDI URI in the broker's configuration.\r\n\r\n**Note:**\r\n\r\nThis is only exploitable if the attacker can connect to the Kafka cluster and has the AlterConfigs permission on the cluster resource.\n\n## Details\n\nSerialization is a process of converting an object into a sequence of bytes which can be persisted to a disk or database or can be sent through streams. The reverse process of creating object from sequence of bytes is called deserialization. Serialization is commonly used for communication (sharing objects between multiple hosts) and persistence (store the object state in a file or a database). It is an integral part of popular protocols like _Remote Method Invocation (RMI)_, _Java Management Extension (JMX)_, _Java Messaging System (JMS)_, _Action Message Format (AMF)_, _Java Server Faces (JSF) ViewState_, etc.\n\n_Deserialization of untrusted data_ ([CWE-502](https://cwe.mitre.org/data/definitions/502.html)) is when the application deserializes untrusted data without sufficiently verifying that the resulting data will be valid, thus allowing the attacker to control the state or the flow of the execution.\n  \n## Remediation\nUpgrade `org.apache.kafka:kafka-clients` to version 3.9.1 or higher.\n## References\n- [GitHub Commit](https://github.com/apache/kafka/commit/4038edfafe43f01f262c47d81786442ad7ab0b03)\n- [Kafka Security Advisories](https://kafka.apache.org/cve-list)\n- [Red Hat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=2371365)\n",
       "epssDetails": {
-        "percentile": "0.68080",
-        "probability": "0.00583",
+        "percentile": "0.76108",
+        "probability": "0.00969",
         "modelVersion": "v2025.03.14"
       },
       "identifiers": {
@@ -949,11 +1086,13 @@
       "severityWithCritical": "high",
       "from": [
         "com.hobbyistprogrammer:kafka-chat-system@0.0.1-SNAPSHOT",
-        "org.springframework.kafka:spring-kafka@3.3.9",
         "org.apache.kafka:kafka-clients@3.8.1"
       ],
-      "upgradePath": [],
-      "isUpgradable": false,
+      "upgradePath": [
+        false,
+        "org.apache.kafka:kafka-clients@3.9.1"
+      ],
+      "isUpgradable": true,
       "isPatchable": false,
       "name": "org.apache.kafka:kafka-clients",
       "version": "3.8.1"
@@ -1040,8 +1179,8 @@
       ],
       "description": "## Overview\n[org.apache.kafka:kafka-clients](http://kafka.apache.org/) is a streaming platform that can publish and subscribe to streams of records, store streams of records in a fault-tolerant durable way, and process streams of records as they occur.\n\nAffected versions of this package are vulnerable to Deserialization of Untrusted Data due to improper handling of configuration data in the `sasl.jaas.config` property. An attacker can achieve arbitrary code execution by injecting a malicious configuration that causes the server to connect to an attacker-controlled LDAP server and deserialize untrusted data, leading to execution of deserialization gadget chains.\r\n\r\n**Note:**\r\n\r\nThis is only exploitable if the attacker has access to alterConfig for a cluster resource or Kafka Connect worker and can create or modify connectors with arbitrary Kafka client SASL JAAS configuration.\n\n## Details\n\nSerialization is a process of converting an object into a sequence of bytes which can be persisted to a disk or database or can be sent through streams. The reverse process of creating object from sequence of bytes is called deserialization. Serialization is commonly used for communication (sharing objects between multiple hosts) and persistence (store the object state in a file or a database). It is an integral part of popular protocols like _Remote Method Invocation (RMI)_, _Java Management Extension (JMX)_, _Java Messaging System (JMS)_, _Action Message Format (AMF)_, _Java Server Faces (JSF) ViewState_, etc.\n\n_Deserialization of untrusted data_ ([CWE-502](https://cwe.mitre.org/data/definitions/502.html)) is when the application deserializes untrusted data without sufficiently verifying that the resulting data will be valid, thus allowing the attacker to control the state or the flow of the execution.\n  \n## Remediation\nUpgrade `org.apache.kafka:kafka-clients` to version 3.9.1 or higher.\n## References\n- [GitHub Commit](https://github.com/apache/kafka/commit/4038edfafe43f01f262c47d81786442ad7ab0b03)\n- [Kafka Security Advisories](https://kafka.apache.org/cve-list)\n- [Red Hat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=2371368)\n",
       "epssDetails": {
-        "percentile": "0.47405",
-        "probability": "0.00243",
+        "percentile": "0.56414",
+        "probability": "0.00343",
         "modelVersion": "v2025.03.14"
       },
       "identifiers": {
@@ -1085,11 +1224,13 @@
       "severityWithCritical": "high",
       "from": [
         "com.hobbyistprogrammer:kafka-chat-system@0.0.1-SNAPSHOT",
-        "org.springframework.kafka:spring-kafka@3.3.9",
         "org.apache.kafka:kafka-clients@3.8.1"
       ],
-      "upgradePath": [],
-      "isUpgradable": false,
+      "upgradePath": [
+        false,
+        "org.apache.kafka:kafka-clients@3.9.1"
+      ],
+      "isUpgradable": true,
       "isPatchable": false,
       "name": "org.apache.kafka:kafka-clients",
       "version": "3.8.1"
@@ -1158,6 +1299,13 @@
           "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H",
           "cvssV3BaseScore": 5.3,
           "modificationTime": "2025-10-28T05:32:00.322558Z"
+        },
+        {
+          "assigner": "SUSE",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 5.3,
+          "modificationTime": "2025-11-13T11:10:53.060933Z"
         }
       ],
       "cvssSources": [
@@ -1187,12 +1335,21 @@
           "baseScore": 5.3,
           "cvssVersion": "3.1",
           "modificationTime": "2025-10-28T05:32:00.322558Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H",
+          "assigner": "SUSE",
+          "severity": "medium",
+          "baseScore": 5.3,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-11-13T11:10:53.060933Z"
         }
       ],
       "description": "## Overview\n[org.apache.tomcat.embed:tomcat-embed-core](https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core) is a Core Tomcat implementation.\n\nAffected versions of this package are vulnerable to Improper Resource Shutdown or Release due to the delayed cleaning of multipart upload temporary files. An attacker can cause a denial-of-service by sending crafted requests that create temporary copies of uploaded parts faster than the garbage collector clears them, leading to resource exhaustion.\r\n\r\n**Note:** Successful exploitation depends on the JVM settings, the application memory usage, and application load.\n\n## Details\n\nDenial of Service (DoS) describes a family of attacks, all aimed at making a system inaccessible to its intended and legitimate users.\n\nUnlike other vulnerabilities, DoS attacks usually do not aim at breaching security. Rather, they are focused on making websites and services unavailable to genuine users resulting in downtime.\n\nOne popular Denial of Service vulnerability is DDoS (a Distributed Denial of Service), an attack that attempts to clog network pipes to the system by generating a large volume of traffic from many machines.\n\nWhen it comes to open source libraries, DoS vulnerabilities allow attackers to trigger such a crash or crippling of the service by using a flaw either in the application code or from the use of open source libraries.\n\nTwo common types of DoS vulnerabilities:\n\n* High CPU/Memory Consumption- An attacker sending crafted requests that could cause the system to take a disproportionate amount of time to process. For example, [commons-fileupload:commons-fileupload](https://security.snyk.io/vuln/SNYK-JAVA-COMMONSFILEUPLOAD-30082).\n\n* Crash - An attacker sending crafted requests that could cause the system to crash. For Example,  [npm `ws` package](https://snyk.io/vuln/npm:ws:20171108)\n\n## Remediation\nUpgrade `org.apache.tomcat.embed:tomcat-embed-core` to version 9.0.110, 10.1.47, 11.0.12 or higher.\n## References\n- [Apache Mail](https://lists.apache.org/thread/wm9mx8brmx9g4zpywm06ryrtvd3160pp)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/1cdf5f730ede75a0759492f179ac21ca4ff68e06)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/af6e9181620304c0d818121c29c074e1330610d0)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/afa422bd7ca1eef0f507259c682fd876494d9c3b)\n- [Red Hat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=2406588)\n- [Vulnerability Advisory](https://tomcat.apache.org/security-11.html#Fixed_in_Apache_Tomcat_11.0.12)\n",
       "epssDetails": {
-        "percentile": "0.13264",
-        "probability": "0.00044",
+        "percentile": "0.29430",
+        "probability": "0.00106",
         "modelVersion": "v2025.03.14"
       },
       "identifiers": {
@@ -1231,20 +1388,16 @@
       },
       "publicationTime": "2025-10-28T14:35:15.060605Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2025-10-28T14:35:15.072620Z",
+      "modificationTime": "2025-11-13T11:10:53.060933Z",
       "socialTrendAlert": false,
       "severityWithCritical": "medium",
       "from": [
         "com.hobbyistprogrammer:kafka-chat-system@0.0.1-SNAPSHOT",
-        "org.springframework.boot:spring-boot-starter-web@3.4.9",
-        "org.springframework.boot:spring-boot-starter-tomcat@3.4.9",
         "org.apache.tomcat.embed:tomcat-embed-core@10.1.44"
       ],
       "upgradePath": [
         false,
-        "org.springframework.boot:spring-boot-starter-web@3.4.11",
-        "org.springframework.boot:spring-boot-starter-tomcat@3.4.11",
-        "org.apache.tomcat.embed:tomcat-embed-core@10.1.48"
+        "org.apache.tomcat.embed:tomcat-embed-core@10.1.47"
       ],
       "isUpgradable": true,
       "isPatchable": false,
@@ -1323,6 +1476,13 @@
           "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
           "cvssV3BaseScore": 7.5,
           "modificationTime": "2025-10-29T04:48:35.034735Z"
+        },
+        {
+          "assigner": "SUSE",
+          "severity": "high",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          "cvssV3BaseScore": 7.5,
+          "modificationTime": "2025-11-13T11:10:38.098739Z"
         }
       ],
       "cvssSources": [
@@ -1352,12 +1512,21 @@
           "baseScore": 7.5,
           "cvssVersion": "3.1",
           "modificationTime": "2025-10-29T04:48:35.034735Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          "assigner": "SUSE",
+          "severity": "high",
+          "baseScore": 7.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-11-13T11:10:38.098739Z"
         }
       ],
       "description": "## Overview\n[org.apache.tomcat.embed:tomcat-embed-core](https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core) is a Core Tomcat implementation.\n\nAffected versions of this package are vulnerable to Relative Path Traversal via the URL normalization. An attacker can bypass security constraints and access restricted directories such as `/WEB-INF/` and `/META-INF/` by manipulating the request URI. If PUT requests are also enabled then malicious files could be uploaded leading to remote code execution.\r\n\r\n**Note:**\r\n\r\n1) Older, EOL versions may also be affected.\r\n2) PUT requests are normally limited to trusted users and it is considered unlikely that PUT requests would be enabled in conjunction with a rewrite that manipulated the URI.\n## Remediation\nUpgrade `org.apache.tomcat.embed:tomcat-embed-core` to version 9.0.109, 10.1.45, 11.0.11 or higher.\n## References\n- [Apache Mailing List](https://lists.apache.org/thread/n05kjcwyj1s45ovs8ll1qrrojhfb1tog)\n- [Apache Tomcat Advisory](https://tomcat.apache.org/security-10.html#Fixed_in_Apache_Tomcat_10.1.45)\n- [Apache Tomcat Advisory](https://tomcat.apache.org/security-11.html#Fixed_in_Apache_Tomcat_11.0.11)\n- [Apache Tomcat Advisory](https://tomcat.apache.org/security-9.html#Fixed_in_Apache_Tomcat_9.0.109)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/130d36d8492ef9e4eb22952c17c92423cb35fd06)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/b5042622b8b78340ae65403c55dcb9c7416924df)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/fec06c610ed7466b401e29cc567a58aee5ed826a)\n- [PoC in GitHub](https://github.com/masahiro331/CVE-2025-55752)\n",
       "epssDetails": {
-        "percentile": "0.39070",
-        "probability": "0.00173",
+        "percentile": "0.47485",
+        "probability": "0.00244",
         "modelVersion": "v2025.03.14"
       },
       "identifiers": {
@@ -1401,20 +1570,16 @@
       },
       "publicationTime": "2025-10-29T10:18:29.155755Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2025-11-04T05:20:07.310926Z",
+      "modificationTime": "2025-11-13T11:10:38.098739Z",
       "socialTrendAlert": false,
       "severityWithCritical": "high",
       "from": [
         "com.hobbyistprogrammer:kafka-chat-system@0.0.1-SNAPSHOT",
-        "org.springframework.boot:spring-boot-starter-web@3.4.9",
-        "org.springframework.boot:spring-boot-starter-tomcat@3.4.9",
         "org.apache.tomcat.embed:tomcat-embed-core@10.1.44"
       ],
       "upgradePath": [
         false,
-        "org.springframework.boot:spring-boot-starter-web@3.4.10",
-        "org.springframework.boot:spring-boot-starter-tomcat@3.4.10",
-        "org.apache.tomcat.embed:tomcat-embed-core@10.1.46"
+        "org.apache.tomcat.embed:tomcat-embed-core@10.1.45"
       ],
       "isUpgradable": true,
       "isPatchable": false,
@@ -1422,104 +1587,104 @@
       "version": "10.1.44"
     },
     {
-      "id": "SNYK-JAVA-ORGBOUNCYCASTLE-11789695",
-      "title": "Allocation of Resources Without Limits or Throttling",
-      "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+      "id": "SNYK-JAVA-ORGLZ4-14151788",
+      "title": "Out-of-bounds Read",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:H",
       "credit": [
-        "Unknown"
+        "Jonas Konrad"
       ],
       "semver": {
         "vulnerable": [
-          "[,1.79)"
+          "[,1.8.1)"
         ]
       },
       "exploit": "Not Defined",
       "fixedIn": [
-        "1.79"
+        "1.8.1"
       ],
       "patches": [],
       "insights": {
         "triageAdvice": null
       },
       "language": "java",
-      "severity": "medium",
-      "cvssScore": 6.3,
+      "severity": "high",
+      "cvssScore": 8.8,
       "functions": [],
       "malicious": false,
       "isDisputed": false,
-      "moduleName": "org.bouncycastle:bcprov-jdk18on",
+      "moduleName": "org.lz4:lz4-java",
       "references": [
         {
-          "url": "https://github.com/bcgit/bc-java/commit/310b30a4fbf36d13f6cc201ffa7771715641e67e",
+          "url": "https://github.com/yawkat/lz4-java/commit/9ea4b51c92aac2878c5f24e91f953e36ee23f147",
           "title": "GitHub Commit"
         },
         {
-          "url": "https://github.com/bcgit/bc-java/commit/ff444a479942d88de64004dc82c3ee32a9e9075a",
-          "title": "GitHub Commit"
+          "url": "https://github.com/yawkat/lz4-java/releases/tag/v1.8.1",
+          "title": "GitHub Release"
         },
         {
-          "url": "https://github.com/bcgit/bc-java/wiki/CVE%E2%80%902025%E2%80%908916",
-          "title": "GitHub Wiki"
+          "url": "https://sites.google.com/sonatype.com/vulnerabilities/cve-2025-12183",
+          "title": "Vulnerability Report"
         }
       ],
       "cvssDetails": [
         {
           "assigner": "Red Hat",
           "severity": "medium",
-          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
-          "cvssV3BaseScore": 5.3,
-          "modificationTime": "2025-08-14T05:59:40.160213Z"
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:H",
+          "cvssV3BaseScore": 6.5,
+          "modificationTime": "2025-12-09T13:32:34.659378Z"
         }
       ],
       "cvssSources": [
         {
           "type": "primary",
-          "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+          "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:H/SC:N/SI:N/SA:N",
           "assigner": "Snyk",
-          "severity": "medium",
-          "baseScore": 6.3,
+          "severity": "high",
+          "baseScore": 8.8,
           "cvssVersion": "4.0",
-          "modificationTime": "2025-08-13T14:36:30.027214Z"
+          "modificationTime": "2025-11-30T11:20:28.035144Z"
         },
         {
           "type": "secondary",
-          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:H",
           "assigner": "Snyk",
-          "severity": "low",
-          "baseScore": 3.7,
+          "severity": "high",
+          "baseScore": 8.2,
           "cvssVersion": "3.1",
-          "modificationTime": "2025-08-13T14:36:30.027214Z"
+          "modificationTime": "2025-11-30T11:20:28.035144Z"
         },
         {
           "type": "secondary",
-          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:H",
           "assigner": "Red Hat",
           "severity": "medium",
-          "baseScore": 5.3,
+          "baseScore": 6.5,
           "cvssVersion": "3.1",
-          "modificationTime": "2025-08-14T05:59:40.160213Z"
+          "modificationTime": "2025-12-09T13:32:34.659378Z"
         }
       ],
-      "description": "## Overview\n\nAffected versions of this package are vulnerable to Allocation of Resources Without Limits or Throttling due to improper processing of large name constraint structures in `PKIXCertPathReviewer`. An attacker can cause excessive resource allocation by submitting specially crafted ASN.1 objects, potentially leading to service disruption. \r\n\r\n## Workaround\r\n\r\nThis vulnerability can be mitigated by limiting the size of ASN.1 objects that can be loaded from untrusted sources, thereby capping the maximum size of a Name Constraints structure.\n## Remediation\nUpgrade `org.bouncycastle:bcprov-jdk18on` to version 1.79 or higher.\n## References\n- [GitHub Commit](https://github.com/bcgit/bc-java/commit/310b30a4fbf36d13f6cc201ffa7771715641e67e)\n- [GitHub Commit](https://github.com/bcgit/bc-java/commit/ff444a479942d88de64004dc82c3ee32a9e9075a)\n- [GitHub Wiki](https://github.com/bcgit/bc-java/wiki/CVE%E2%80%902025%E2%80%908916)\n",
+      "description": "## Overview\n[org.lz4:lz4-java](https://github.com/lz4/lz4-java) is a Java port of the LZ4 compression algorithm and the xxHash hashing algorithm.\n\nAffected versions of this package are vulnerable to Out-of-bounds Read due to the use of the insecure `LZ4_decompress_fast` in the underlying lz4 library, which lacks bounds checks. An attacker can cause denial of service or access sensitive memory contents by providing specially crafted compressed input.\r\n\r\n## Workaround\r\n\r\n- Applications using `LZ4Factory.nativeInstance()` in conjunction with `.fastDecompressor()` can switch to `.safeInstance()` or `.safeDecompressor()`.\r\n- Applications using `LZ4Factory.unsafeInstance()`, `.fastestInstance()` or `.fastestJavaInstance()` can switch to `.safeInstance()`.\r\n\r\n## Notes\r\n\r\n- The official `org.lz4:lz4-java` library has not been patched and the project is discontinued. \r\n\r\n- `org.lz4:lz4-java:1.8.1` relocates the pacakge to `at.yawk.lz4:lz4-java`, which is a community-maintained fork of the library that fixes this vulnerability.\n## Remediation\nUpgrade `org.lz4:lz4-java` to version 1.8.1 or higher.\n## References\n- [GitHub Commit](https://github.com/yawkat/lz4-java/commit/9ea4b51c92aac2878c5f24e91f953e36ee23f147)\n- [GitHub Release](https://github.com/yawkat/lz4-java/releases/tag/v1.8.1)\n- [Vulnerability Report](https://sites.google.com/sonatype.com/vulnerabilities/cve-2025-12183)\n",
       "epssDetails": {
-        "percentile": "0.19733",
-        "probability": "0.00063",
+        "percentile": "0.42130",
+        "probability": "0.00200",
         "modelVersion": "v2025.03.14"
       },
       "identifiers": {
         "CVE": [
-          "CVE-2025-8916"
+          "CVE-2025-12183"
         ],
         "CWE": [
-          "CWE-770"
+          "CWE-125"
         ]
       },
-      "packageName": "org.bouncycastle:bcprov-jdk18on",
+      "packageName": "org.lz4:lz4-java",
       "proprietary": false,
-      "creationTime": "2025-08-13T13:44:55.865664Z",
+      "creationTime": "2025-11-30T09:50:51.568870Z",
       "functions_new": [],
       "alternativeIds": [],
-      "disclosureTime": "2025-08-13T09:52:08Z",
+      "disclosureTime": "2025-11-28T16:39:38Z",
       "exploitDetails": {
         "sources": [],
         "maturityLevels": [
@@ -1537,28 +1702,152 @@
       },
       "packageManager": "maven",
       "mavenModuleName": {
-        "groupId": "org.bouncycastle",
-        "artifactId": "bcprov-jdk18on"
+        "groupId": "org.lz4",
+        "artifactId": "lz4-java"
       },
-      "publicationTime": "2025-08-13T14:36:30.018359Z",
+      "publicationTime": "2025-11-30T11:20:28.022826Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2025-08-14T05:59:40.160213Z",
+      "modificationTime": "2025-12-09T13:32:34.659378Z",
       "socialTrendAlert": false,
-      "severityWithCritical": "medium",
+      "severityWithCritical": "high",
       "from": [
         "com.hobbyistprogrammer:kafka-chat-system@0.0.1-SNAPSHOT",
-        "org.springframework.cloud:spring-cloud-starter@4.2.1",
-        "org.bouncycastle:bcprov-jdk18on@1.78.1"
+        "org.apache.kafka:kafka-clients@3.8.1",
+        "org.lz4:lz4-java@1.8.0"
       ],
-      "upgradePath": [
-        false,
-        "org.springframework.cloud:spring-cloud-starter@4.3.0",
-        "org.bouncycastle:bcprov-jdk18on@1.80"
-      ],
-      "isUpgradable": true,
+      "upgradePath": [],
+      "isUpgradable": false,
       "isPatchable": false,
-      "name": "org.bouncycastle:bcprov-jdk18on",
-      "version": "1.78.1"
+      "name": "org.lz4:lz4-java",
+      "version": "1.8.0"
+    },
+    {
+      "id": "SNYK-JAVA-ORGLZ4-14219384",
+      "title": "Insertion of Sensitive Information Into Sent Data",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "credit": [
+        "simonresch"
+      ],
+      "semver": {
+        "vulnerable": [
+          "[0,]"
+        ]
+      },
+      "exploit": "Not Defined",
+      "fixedIn": [],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "java",
+      "severity": "high",
+      "cvssScore": 8.2,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "org.lz4:lz4-java",
+      "references": [
+        {
+          "url": "https://github.com/yawkat/lz4-java/commit/33d180cb70c4d93c80fb0dc3ab3002f457e93840",
+          "title": "GitHub Commit"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "high",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+          "cvssV3BaseScore": 7.5,
+          "modificationTime": "2025-12-11T22:25:49.610481Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+          "assigner": "Snyk",
+          "severity": "high",
+          "baseScore": 8.2,
+          "cvssVersion": "4.0",
+          "modificationTime": "2025-12-07T11:24:54.358760Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 5.9,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-12-07T11:24:54.358760Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+          "assigner": "Red Hat",
+          "severity": "high",
+          "baseScore": 7.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-12-11T22:25:49.610481Z"
+        }
+      ],
+      "description": "## Overview\n[org.lz4:lz4-java](https://github.com/lz4/lz4-java) is a Java port of the LZ4 compression algorithm and the xxHash hashing algorithm.\n\nAffected versions of this package are vulnerable to Insertion of Sensitive Information Into Sent Data in the decompression process when the output buffer is reused without being cleared. An attacker can access sensitive information from previous buffer contents by providing crafted compressed input.\r\n\r\n**Note:**\r\n\r\n- JNI implementations are not vulnerable.\r\n- `LZ4Factory.safeInstance()`, `LZ4Factory.unsafeInstance()`, and `LZ4Factory.fastestJavaInstance()` are all vulnerable.\r\n- `nativeInstance().fastDecompressor()` is vulnerable but `nativeInstance().safeDecompressor()` is not.\r\n- This vulnerability is distinct from the one described in [CVE-2025-12183](https://security.snyk.io/vuln/SNYK-JAVA-ORGLZ4-14151788), and was discovered during follow-up research.\r\n\r\n## Workaround\r\nThis vulnerability can be mitigated by zeroing the output buffer before passing it to the decompression function.\n## Remediation\nThere is no fixed version for `org.lz4:lz4-java`.\n## References\n- [GitHub Commit](https://github.com/yawkat/lz4-java/commit/33d180cb70c4d93c80fb0dc3ab3002f457e93840)\n",
+      "epssDetails": {
+        "percentile": "0.43625",
+        "probability": "0.00211",
+        "modelVersion": "v2025.03.14"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2025-66566"
+        ],
+        "CWE": [
+          "CWE-201"
+        ],
+        "GHSA": [
+          "GHSA-cmp6-m4wj-q63q"
+        ]
+      },
+      "packageName": "org.lz4:lz4-java",
+      "proprietary": false,
+      "creationTime": "2025-12-06T20:20:12.872465Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2025-12-05T18:54:55Z",
+      "exploitDetails": {
+        "sources": [],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Not Defined",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Not Defined",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "maven",
+      "mavenModuleName": {
+        "groupId": "org.lz4",
+        "artifactId": "lz4-java"
+      },
+      "publicationTime": "2025-12-07T11:24:54.352019Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2025-12-11T22:25:49.610481Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "high",
+      "from": [
+        "com.hobbyistprogrammer:kafka-chat-system@0.0.1-SNAPSHOT",
+        "org.apache.kafka:kafka-clients@3.8.1",
+        "org.lz4:lz4-java@1.8.0"
+      ],
+      "upgradePath": [],
+      "isUpgradable": false,
+      "isPatchable": false,
+      "name": "org.lz4:lz4-java",
+      "version": "1.8.0"
     },
     {
       "id": "SNYK-JAVA-ORGSPRINGFRAMEWORK-12817817",
@@ -1645,8 +1934,8 @@
       ],
       "description": "## Overview\n[org.springframework:spring-core](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22spring-core%22) is a core package within the spring-framework that contains multiple classes and utilities.\n\nAffected versions of this package are vulnerable to Incorrect Authorization via the `AnnotationsScanner` and `AnnotatedMethod` class. An attacker can gain unauthorized access to sensitive information by exploiting improper resolution of annotations on methods within type hierarchies that use parameterized supertypes with unbounded generics.\r\n\r\n**Note:**\r\nThis is only exploitable if security annotations are used on methods in generic superclasses or generic interfaces and the `@EnableMethodSecurity` feature is enabled.\n## Remediation\nUpgrade `org.springframework:spring-core` to version 6.2.11 or higher.\n## References\n- [GitHub Commit](https://github.com/spring-projects/spring-framework/commit/6d710d482a6785b069e35022e81758953afc21ff)\n- [GitHub Issue](https://github.com/spring-projects/spring-framework/issues/35342)\n- [GitHub Release](https://github.com/spring-projects/spring-framework/releases/tag/v6.2.11)\n- [Vendor Advisory](https://spring.io/security/cve-2025-41249)\n",
       "epssDetails": {
-        "percentile": "0.17523",
-        "probability": "0.00056",
+        "percentile": "0.24131",
+        "probability": "0.00080",
         "modelVersion": "v2025.03.14"
       },
       "identifiers": {
@@ -1693,12 +1982,10 @@
       "severityWithCritical": "high",
       "from": [
         "com.hobbyistprogrammer:kafka-chat-system@0.0.1-SNAPSHOT",
-        "org.springframework.boot:spring-boot-starter-test@3.4.9",
         "org.springframework:spring-core@6.2.10"
       ],
       "upgradePath": [
         false,
-        "org.springframework.boot:spring-boot-starter-test@3.4.10",
         "org.springframework:spring-core@6.2.11"
       ],
       "isUpgradable": true,
@@ -1805,8 +2092,8 @@
       ],
       "description": "## Overview\n[org.springframework.security:spring-security-core](http://spring.io/spring-security) is a package that provides security services for the Spring IO Platform.\n\nAffected versions of this package are vulnerable to Incorrect Authorization via the annotation detection mechanism when resolving annotations on methods within type hierarchies that use a parameterized super type with unbounded generics. An attacker can gain unauthorized access to protected resources by invoking methods that should be secured but are not properly checked due to incorrect annotation resolution.\r\n\r\n**Note:**\r\nThis is only exploitable if the application uses the `@EnableMethodSecurity` feature and applies security annotations on methods in generic superclasses or generic interfaces.\n## Remediation\nUpgrade `org.springframework.security:spring-security-core` to version 6.4.10, 6.5.4 or higher.\n## References\n- [GitHub Commit](https://github.com/spring-projects/spring-security/commit/d0f93fa6d8338149943ae640c53db07de827867f)\n- [GitHub Commit](https://github.com/spring-projects/spring-security/commit/e5694ac7b5e4394b920c6cab48b7bfbd871f84bd)\n- [GitHub Issue](https://github.com/spring-projects/spring-security/issues/17898)\n- [GitHub Issue](https://github.com/spring-projects/spring-security/issues/17899)\n- [GitHub Release](https://github.com/spring-projects/spring-security/releases/tag/6.4.10)\n- [GitHub Release](https://github.com/spring-projects/spring-security/releases/tag/6.5.4)\n- [Vendor Advisory](https://spring.io/security/cve-2025-41248)\n",
       "epssDetails": {
-        "percentile": "0.17523",
-        "probability": "0.00056",
+        "percentile": "0.18569",
+        "probability": "0.00059",
         "modelVersion": "v2025.03.14"
       },
       "identifiers": {
@@ -1853,12 +2140,10 @@
       "severityWithCritical": "high",
       "from": [
         "com.hobbyistprogrammer:kafka-chat-system@0.0.1-SNAPSHOT",
-        "org.springframework.security:spring-security-test@6.4.9",
         "org.springframework.security:spring-security-core@6.4.9"
       ],
       "upgradePath": [
         false,
-        "org.springframework.security:spring-security-test@6.4.10",
         "org.springframework.security:spring-security-core@6.4.10"
       ],
       "isUpgradable": true,
@@ -1963,394 +2248,239 @@
     "reasonRequired": false,
     "disregardFilesystemIgnores": false
   },
-  "summary": "12 vulnerable dependency paths",
+  "summary": "14 vulnerable dependency paths",
   "remediation": {
     "unresolved": [
       {
-        "id": "SNYK-JAVA-CHQOSLOGBACK-13169722",
-        "title": "External Initialization of Trusted Variables or Data Stores",
-        "CVSSv3": "CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:C/C:H/I:L/A:L",
+        "id": "SNYK-JAVA-ORGLZ4-14151788",
+        "title": "Out-of-bounds Read",
+        "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:H",
         "credit": [
-          "Unknown"
+          "Jonas Konrad"
         ],
         "semver": {
           "vulnerable": [
-            "[,1.5.19)"
+            "[,1.8.1)"
           ]
         },
         "exploit": "Not Defined",
         "fixedIn": [
-          "1.5.19"
+          "1.8.1"
         ],
         "patches": [],
         "insights": {
           "triageAdvice": null
         },
         "language": "java",
-        "severity": "medium",
-        "cvssScore": 5.9,
+        "severity": "high",
+        "cvssScore": 8.8,
         "functions": [],
         "malicious": false,
         "isDisputed": false,
-        "moduleName": "ch.qos.logback:logback-core",
+        "moduleName": "org.lz4:lz4-java",
         "references": [
           {
-            "url": "https://github.com/qos-ch/logback/commit/61f6a2544f36b3016e0efd434ee21f19269f1df7",
+            "url": "https://github.com/yawkat/lz4-java/commit/9ea4b51c92aac2878c5f24e91f953e36ee23f147",
             "title": "GitHub Commit"
           },
           {
-            "url": "https://logback.qos.ch/news.html%231.5.19",
-            "title": "Release Notes"
+            "url": "https://github.com/yawkat/lz4-java/releases/tag/v1.8.1",
+            "title": "GitHub Release"
+          },
+          {
+            "url": "https://sites.google.com/sonatype.com/vulnerabilities/cve-2025-12183",
+            "title": "Vulnerability Report"
           }
         ],
         "cvssDetails": [
           {
             "assigner": "Red Hat",
             "severity": "medium",
-            "cvssV3Vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:C/C:H/I:L/A:L",
-            "cvssV3BaseScore": 6.4,
-            "modificationTime": "2025-10-04T19:43:14.046068Z"
+            "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:H",
+            "cvssV3BaseScore": 6.5,
+            "modificationTime": "2025-12-09T13:32:34.659378Z"
           }
         ],
         "cvssSources": [
           {
             "type": "primary",
-            "vector": "CVSS:4.0/AV:L/AC:L/AT:P/PR:H/UI:P/VC:H/VI:L/VA:L/SC:H/SI:L/SA:L",
+            "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:H/SC:N/SI:N/SA:N",
+            "assigner": "Snyk",
+            "severity": "high",
+            "baseScore": 8.8,
+            "cvssVersion": "4.0",
+            "modificationTime": "2025-11-30T11:20:28.035144Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:H",
+            "assigner": "Snyk",
+            "severity": "high",
+            "baseScore": 8.2,
+            "cvssVersion": "3.1",
+            "modificationTime": "2025-11-30T11:20:28.035144Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:H",
+            "assigner": "Red Hat",
+            "severity": "medium",
+            "baseScore": 6.5,
+            "cvssVersion": "3.1",
+            "modificationTime": "2025-12-09T13:32:34.659378Z"
+          }
+        ],
+        "description": "## Overview\n[org.lz4:lz4-java](https://github.com/lz4/lz4-java) is a Java port of the LZ4 compression algorithm and the xxHash hashing algorithm.\n\nAffected versions of this package are vulnerable to Out-of-bounds Read due to the use of the insecure `LZ4_decompress_fast` in the underlying lz4 library, which lacks bounds checks. An attacker can cause denial of service or access sensitive memory contents by providing specially crafted compressed input.\r\n\r\n## Workaround\r\n\r\n- Applications using `LZ4Factory.nativeInstance()` in conjunction with `.fastDecompressor()` can switch to `.safeInstance()` or `.safeDecompressor()`.\r\n- Applications using `LZ4Factory.unsafeInstance()`, `.fastestInstance()` or `.fastestJavaInstance()` can switch to `.safeInstance()`.\r\n\r\n## Notes\r\n\r\n- The official `org.lz4:lz4-java` library has not been patched and the project is discontinued. \r\n\r\n- `org.lz4:lz4-java:1.8.1` relocates the pacakge to `at.yawk.lz4:lz4-java`, which is a community-maintained fork of the library that fixes this vulnerability.\n## Remediation\nUpgrade `org.lz4:lz4-java` to version 1.8.1 or higher.\n## References\n- [GitHub Commit](https://github.com/yawkat/lz4-java/commit/9ea4b51c92aac2878c5f24e91f953e36ee23f147)\n- [GitHub Release](https://github.com/yawkat/lz4-java/releases/tag/v1.8.1)\n- [Vulnerability Report](https://sites.google.com/sonatype.com/vulnerabilities/cve-2025-12183)\n",
+        "epssDetails": {
+          "percentile": "0.42130",
+          "probability": "0.00200",
+          "modelVersion": "v2025.03.14"
+        },
+        "identifiers": {
+          "CVE": [
+            "CVE-2025-12183"
+          ],
+          "CWE": [
+            "CWE-125"
+          ]
+        },
+        "packageName": "org.lz4:lz4-java",
+        "proprietary": false,
+        "creationTime": "2025-11-30T09:50:51.568870Z",
+        "functions_new": [],
+        "alternativeIds": [],
+        "disclosureTime": "2025-11-28T16:39:38Z",
+        "exploitDetails": {
+          "sources": [],
+          "maturityLevels": [
+            {
+              "type": "secondary",
+              "level": "Not Defined",
+              "format": "CVSSv3"
+            },
+            {
+              "type": "primary",
+              "level": "Not Defined",
+              "format": "CVSSv4"
+            }
+          ]
+        },
+        "packageManager": "maven",
+        "mavenModuleName": {
+          "groupId": "org.lz4",
+          "artifactId": "lz4-java"
+        },
+        "publicationTime": "2025-11-30T11:20:28.022826Z",
+        "severityBasedOn": "CVSS",
+        "modificationTime": "2025-12-09T13:32:34.659378Z",
+        "socialTrendAlert": false,
+        "packagePopularityRank": 99,
+        "from": [
+          "com.hobbyistprogrammer:kafka-chat-system@0.0.1-SNAPSHOT",
+          "org.apache.kafka:kafka-clients@3.8.1",
+          "org.lz4:lz4-java@1.8.0"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false,
+        "isPatchable": false,
+        "isPinnable": false,
+        "isRuntime": false,
+        "name": "org.lz4:lz4-java",
+        "version": "1.8.0",
+        "severityWithCritical": "high"
+      },
+      {
+        "id": "SNYK-JAVA-ORGLZ4-14219384",
+        "title": "Insertion of Sensitive Information Into Sent Data",
+        "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+        "credit": [
+          "simonresch"
+        ],
+        "semver": {
+          "vulnerable": [
+            "[0,]"
+          ]
+        },
+        "exploit": "Not Defined",
+        "fixedIn": [],
+        "patches": [],
+        "insights": {
+          "triageAdvice": null
+        },
+        "language": "java",
+        "severity": "high",
+        "cvssScore": 8.2,
+        "functions": [],
+        "malicious": false,
+        "isDisputed": false,
+        "moduleName": "org.lz4:lz4-java",
+        "references": [
+          {
+            "url": "https://github.com/yawkat/lz4-java/commit/33d180cb70c4d93c80fb0dc3ab3002f457e93840",
+            "title": "GitHub Commit"
+          }
+        ],
+        "cvssDetails": [
+          {
+            "assigner": "Red Hat",
+            "severity": "high",
+            "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvssV3BaseScore": 7.5,
+            "modificationTime": "2025-12-11T22:25:49.610481Z"
+          }
+        ],
+        "cvssSources": [
+          {
+            "type": "primary",
+            "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+            "assigner": "Snyk",
+            "severity": "high",
+            "baseScore": 8.2,
+            "cvssVersion": "4.0",
+            "modificationTime": "2025-12-07T11:24:54.358760Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
             "assigner": "Snyk",
             "severity": "medium",
             "baseScore": 5.9,
-            "cvssVersion": "4.0",
-            "modificationTime": "2025-10-01T12:16:52.160102Z"
-          },
-          {
-            "type": "secondary",
-            "vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:C/C:H/I:L/A:L",
-            "assigner": "Snyk",
-            "severity": "medium",
-            "baseScore": 6.4,
             "cvssVersion": "3.1",
-            "modificationTime": "2025-10-01T12:16:52.160102Z"
+            "modificationTime": "2025-12-07T11:24:54.358760Z"
           },
           {
             "type": "secondary",
-            "vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:C/C:H/I:L/A:L",
+            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
             "assigner": "Red Hat",
-            "severity": "medium",
-            "baseScore": 6.4,
-            "cvssVersion": "3.1",
-            "modificationTime": "2025-10-04T19:43:14.046068Z"
-          }
-        ],
-        "description": "## Overview\n[ch.qos.logback:logback-core](https://mvnrepository.com/artifact/ch.qos.logback/logback-core) is a logback-core module.\n\nAffected versions of this package are vulnerable to External Initialization of Trusted Variables or Data Stores via the conditional processing of the `logback.xml` configuration file when both the Janino library and Spring Framework are present on the class path. An attacker can execute arbitrary code by compromising an existing configuration file or injecting a malicious environment variable before program execution. This is only exploitable if the attacker has write access to a configuration file or can set a malicious environment variable.\n## Remediation\nUpgrade `ch.qos.logback:logback-core` to version 1.5.19 or higher.\n## References\n- [GitHub Commit](https://github.com/qos-ch/logback/commit/61f6a2544f36b3016e0efd434ee21f19269f1df7)\n- [Release Notes](https://logback.qos.ch/news.html#1.5.19)\n",
-        "epssDetails": {
-          "percentile": "0.11758",
-          "probability": "0.00040",
-          "modelVersion": "v2025.03.14"
-        },
-        "identifiers": {
-          "CVE": [
-            "CVE-2025-11226"
-          ],
-          "CWE": [
-            "CWE-454"
-          ]
-        },
-        "packageName": "ch.qos.logback:logback-core",
-        "proprietary": false,
-        "creationTime": "2025-10-01T12:16:51.884016Z",
-        "functions_new": [],
-        "alternativeIds": [],
-        "disclosureTime": "2025-10-01T07:46:31.257000Z",
-        "exploitDetails": {
-          "sources": [],
-          "maturityLevels": [
-            {
-              "type": "secondary",
-              "level": "Not Defined",
-              "format": "CVSSv3"
-            },
-            {
-              "type": "primary",
-              "level": "Not Defined",
-              "format": "CVSSv4"
-            }
-          ]
-        },
-        "packageManager": "maven",
-        "mavenModuleName": {
-          "groupId": "ch.qos.logback",
-          "artifactId": "logback-core"
-        },
-        "publicationTime": "2025-10-01T12:16:52.127237Z",
-        "severityBasedOn": "CVSS",
-        "modificationTime": "2025-10-04T19:43:14.046068Z",
-        "socialTrendAlert": false,
-        "packagePopularityRank": 99,
-        "from": [
-          "com.hobbyistprogrammer:kafka-chat-system@0.0.1-SNAPSHOT",
-          "org.springframework.kafka:spring-kafka-test@3.3.9",
-          "org.apache.zookeeper:zookeeper@3.8.4",
-          "ch.qos.logback:logback-core@1.5.18"
-        ],
-        "upgradePath": [],
-        "isUpgradable": false,
-        "isPatchable": false,
-        "isPinnable": false,
-        "isRuntime": false,
-        "name": "ch.qos.logback:logback-core",
-        "version": "1.5.18",
-        "severityWithCritical": "medium"
-      },
-      {
-        "id": "SNYK-JAVA-ORGAPACHEKAFKA-10336719",
-        "title": "Server-side Request Forgery (SSRF)",
-        "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N/E:P",
-        "credit": [
-          "4ra1n",
-          "luelueking",
-          "enokiy"
-        ],
-        "semver": {
-          "vulnerable": [
-            "[3.1.0,3.9.1)"
-          ]
-        },
-        "exploit": "Proof of Concept",
-        "fixedIn": [
-          "3.9.1"
-        ],
-        "patches": [],
-        "insights": {
-          "triageAdvice": null
-        },
-        "language": "java",
-        "severity": "high",
-        "cvssScore": 8.7,
-        "functions": [],
-        "malicious": false,
-        "isDisputed": false,
-        "moduleName": "org.apache.kafka:kafka-clients",
-        "references": [
-          {
-            "url": "https://kafka.apache.org/cve-list",
-            "title": "Apache Kafka"
-          },
-          {
-            "url": "https://github.com/apache/kafka/commit/35829fddcbcf375eb0462d07a51bf8becb1b8757",
-            "title": "GitHub Commit"
-          },
-          {
-            "url": "http://www.openwall.com/lists/oss-security/2025/06/09/1",
-            "title": "OSS Security Advisory"
-          },
-          {
-            "url": "https://github.com/kk12-30/CVE-2025-27817",
-            "title": "PoC in GitHub"
-          }
-        ],
-        "cvssDetails": [
-          {
-            "assigner": "Red Hat",
-            "severity": "high",
-            "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
-            "cvssV3BaseScore": 8.1,
-            "modificationTime": "2025-06-10T13:37:20.095600Z"
-          }
-        ],
-        "cvssSources": [
-          {
-            "type": "primary",
-            "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:P",
-            "assigner": "Snyk",
-            "severity": "high",
-            "baseScore": 8.7,
-            "cvssVersion": "4.0",
-            "modificationTime": "2025-06-11T07:58:31.976256Z"
-          },
-          {
-            "type": "secondary",
-            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N/E:P",
-            "assigner": "Snyk",
             "severity": "high",
             "baseScore": 7.5,
             "cvssVersion": "3.1",
-            "modificationTime": "2025-06-11T07:58:31.976256Z"
-          },
-          {
-            "type": "secondary",
-            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
-            "assigner": "Red Hat",
-            "severity": "high",
-            "baseScore": 8.1,
-            "cvssVersion": "3.1",
-            "modificationTime": "2025-06-10T13:37:20.095600Z"
+            "modificationTime": "2025-12-11T22:25:49.610481Z"
           }
         ],
-        "description": "## Overview\n[org.apache.kafka:kafka-clients](http://kafka.apache.org/) is a streaming platform that can publish and subscribe to streams of records, store streams of records in a fault-tolerant durable way, and process streams of records as they occur.\n\nAffected versions of this package are vulnerable to Server-side Request Forgery (SSRF) due to the improper handling of `sasl.oauthbearer.token.endpoint.url` and `sasl.oauthbearer.jwks.endpoint.url` configurations. An attacker can read arbitrary contents of the disk and environment variables or make requests to an unintended location by manipulating these configurations.\r\n\r\n**Note:**\r\nThis is only exploitable if configurations can be specified by an untrusted party.\n## Remediation\nUpgrade `org.apache.kafka:kafka-clients` to version 3.9.1 or higher.\n## References\n- [Apache Kafka](https://kafka.apache.org/cve-list)\n- [GitHub Commit](https://github.com/apache/kafka/commit/35829fddcbcf375eb0462d07a51bf8becb1b8757)\n- [OSS Security Advisory](http://www.openwall.com/lists/oss-security/2025/06/09/1)\n- [PoC in GitHub](https://github.com/kk12-30/CVE-2025-27817)\n",
+        "description": "## Overview\n[org.lz4:lz4-java](https://github.com/lz4/lz4-java) is a Java port of the LZ4 compression algorithm and the xxHash hashing algorithm.\n\nAffected versions of this package are vulnerable to Insertion of Sensitive Information Into Sent Data in the decompression process when the output buffer is reused without being cleared. An attacker can access sensitive information from previous buffer contents by providing crafted compressed input.\r\n\r\n**Note:**\r\n\r\n- JNI implementations are not vulnerable.\r\n- `LZ4Factory.safeInstance()`, `LZ4Factory.unsafeInstance()`, and `LZ4Factory.fastestJavaInstance()` are all vulnerable.\r\n- `nativeInstance().fastDecompressor()` is vulnerable but `nativeInstance().safeDecompressor()` is not.\r\n- This vulnerability is distinct from the one described in [CVE-2025-12183](https://security.snyk.io/vuln/SNYK-JAVA-ORGLZ4-14151788), and was discovered during follow-up research.\r\n\r\n## Workaround\r\nThis vulnerability can be mitigated by zeroing the output buffer before passing it to the decompression function.\n## Remediation\nThere is no fixed version for `org.lz4:lz4-java`.\n## References\n- [GitHub Commit](https://github.com/yawkat/lz4-java/commit/33d180cb70c4d93c80fb0dc3ab3002f457e93840)\n",
         "epssDetails": {
-          "percentile": "0.08431",
-          "probability": "0.00032",
+          "percentile": "0.43625",
+          "probability": "0.00211",
           "modelVersion": "v2025.03.14"
         },
         "identifiers": {
           "CVE": [
-            "CVE-2025-27817"
+            "CVE-2025-66566"
           ],
           "CWE": [
-            "CWE-918"
+            "CWE-201"
           ],
           "GHSA": [
-            "GHSA-vgq5-3255-v292"
+            "GHSA-cmp6-m4wj-q63q"
           ]
         },
-        "packageName": "org.apache.kafka:kafka-clients",
+        "packageName": "org.lz4:lz4-java",
         "proprietary": false,
-        "creationTime": "2025-06-11T07:25:30.049183Z",
+        "creationTime": "2025-12-06T20:20:12.872465Z",
         "functions_new": [],
         "alternativeIds": [],
-        "disclosureTime": "2025-06-10T09:30:31Z",
-        "exploitDetails": {
-          "sources": [
-            "PoC in GitHub"
-          ],
-          "maturityLevels": [
-            {
-              "type": "secondary",
-              "level": "Proof of Concept",
-              "format": "CVSSv3"
-            },
-            {
-              "type": "primary",
-              "level": "Proof of Concept",
-              "format": "CVSSv4"
-            }
-          ]
-        },
-        "packageManager": "maven",
-        "mavenModuleName": {
-          "groupId": "org.apache.kafka",
-          "artifactId": "kafka-clients"
-        },
-        "publicationTime": "2025-06-11T07:58:31.967596Z",
-        "severityBasedOn": "CVSS",
-        "modificationTime": "2025-06-18T05:20:04.361113Z",
-        "socialTrendAlert": false,
-        "packagePopularityRank": 99,
-        "from": [
-          "com.hobbyistprogrammer:kafka-chat-system@0.0.1-SNAPSHOT",
-          "org.springframework.kafka:spring-kafka@3.3.9",
-          "org.apache.kafka:kafka-clients@3.8.1"
-        ],
-        "upgradePath": [],
-        "isUpgradable": false,
-        "isPatchable": false,
-        "isPinnable": false,
-        "isRuntime": false,
-        "name": "org.apache.kafka:kafka-clients",
-        "version": "3.8.1",
-        "severityWithCritical": "high"
-      },
-      {
-        "id": "SNYK-JAVA-ORGAPACHEKAFKA-10350513",
-        "title": "Deserialization of Untrusted Data",
-        "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-        "credit": [
-          "Ziyang Li",
-          "Ji'an Zhou",
-          "Ying Zhu"
-        ],
-        "semver": {
-          "vulnerable": [
-            "[2.0.0,3.9.1)"
-          ]
-        },
-        "exploit": "Not Defined",
-        "fixedIn": [
-          "3.9.1"
-        ],
-        "patches": [],
-        "insights": {
-          "triageAdvice": null
-        },
-        "language": "java",
-        "severity": "high",
-        "cvssScore": 8.6,
-        "functions": [],
-        "malicious": false,
-        "isDisputed": false,
-        "moduleName": "org.apache.kafka:kafka-clients",
-        "references": [
-          {
-            "url": "https://github.com/apache/kafka/commit/4038edfafe43f01f262c47d81786442ad7ab0b03",
-            "title": "GitHub Commit"
-          },
-          {
-            "url": "https://kafka.apache.org/cve-list",
-            "title": "Kafka Security Advisories"
-          },
-          {
-            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2371365",
-            "title": "Red Hat Bugzilla Bug"
-          }
-        ],
-        "cvssDetails": [
-          {
-            "assigner": "Red Hat",
-            "severity": "high",
-            "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-            "cvssV3BaseScore": 8.8,
-            "modificationTime": "2025-06-11T14:42:45.380583Z"
-          }
-        ],
-        "cvssSources": [
-          {
-            "type": "primary",
-            "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-            "assigner": "Snyk",
-            "severity": "high",
-            "baseScore": 8.6,
-            "cvssVersion": "4.0",
-            "modificationTime": "2025-06-13T16:13:45.186656Z"
-          },
-          {
-            "type": "secondary",
-            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-            "assigner": "Snyk",
-            "severity": "high",
-            "baseScore": 8.8,
-            "cvssVersion": "3.1",
-            "modificationTime": "2025-06-13T16:13:45.186656Z"
-          },
-          {
-            "type": "secondary",
-            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-            "assigner": "Red Hat",
-            "severity": "high",
-            "baseScore": 8.8,
-            "cvssVersion": "3.1",
-            "modificationTime": "2025-06-11T14:42:45.380583Z"
-          }
-        ],
-        "description": "## Overview\n[org.apache.kafka:kafka-clients](http://kafka.apache.org/) is a streaming platform that can publish and subscribe to streams of records, store streams of records in a fault-tolerant durable way, and process streams of records as they occur.\n\nAffected versions of this package are vulnerable to Deserialization of Untrusted Data via the `JndiLoginModule` process in the SASL authentication mechanism. An attacker can execute arbitrary code or cause a denial of service by supplying a malicious JNDI URI in the broker's configuration.\r\n\r\n**Note:**\r\n\r\nThis is only exploitable if the attacker can connect to the Kafka cluster and has the AlterConfigs permission on the cluster resource.\n\n## Details\n\nSerialization is a process of converting an object into a sequence of bytes which can be persisted to a disk or database or can be sent through streams. The reverse process of creating object from sequence of bytes is called deserialization. Serialization is commonly used for communication (sharing objects between multiple hosts) and persistence (store the object state in a file or a database). It is an integral part of popular protocols like _Remote Method Invocation (RMI)_, _Java Management Extension (JMX)_, _Java Messaging System (JMS)_, _Action Message Format (AMF)_, _Java Server Faces (JSF) ViewState_, etc.\n\n_Deserialization of untrusted data_ ([CWE-502](https://cwe.mitre.org/data/definitions/502.html)) is when the application deserializes untrusted data without sufficiently verifying that the resulting data will be valid, thus allowing the attacker to control the state or the flow of the execution.\n  \n## Remediation\nUpgrade `org.apache.kafka:kafka-clients` to version 3.9.1 or higher.\n## References\n- [GitHub Commit](https://github.com/apache/kafka/commit/4038edfafe43f01f262c47d81786442ad7ab0b03)\n- [Kafka Security Advisories](https://kafka.apache.org/cve-list)\n- [Red Hat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=2371365)\n",
-        "epssDetails": {
-          "percentile": "0.68080",
-          "probability": "0.00583",
-          "modelVersion": "v2025.03.14"
-        },
-        "identifiers": {
-          "CVE": [
-            "CVE-2025-27819"
-          ],
-          "CWE": [
-            "CWE-502"
-          ]
-        },
-        "packageName": "org.apache.kafka:kafka-clients",
-        "proprietary": false,
-        "creationTime": "2025-06-13T15:53:34.215532Z",
-        "functions_new": [],
-        "alternativeIds": [],
-        "disclosureTime": "2025-06-10T07:54:41Z",
+        "disclosureTime": "2025-12-05T18:54:55Z",
         "exploitDetails": {
           "sources": [],
           "maturityLevels": [
@@ -2368,180 +2498,76 @@
         },
         "packageManager": "maven",
         "mavenModuleName": {
-          "groupId": "org.apache.kafka",
-          "artifactId": "kafka-clients"
+          "groupId": "org.lz4",
+          "artifactId": "lz4-java"
         },
-        "publicationTime": "2025-06-13T15:53:34.489818Z",
+        "publicationTime": "2025-12-07T11:24:54.352019Z",
         "severityBasedOn": "CVSS",
-        "modificationTime": "2025-06-13T16:13:45.186656Z",
+        "modificationTime": "2025-12-11T22:25:49.610481Z",
         "socialTrendAlert": false,
         "packagePopularityRank": 99,
         "from": [
           "com.hobbyistprogrammer:kafka-chat-system@0.0.1-SNAPSHOT",
-          "org.springframework.kafka:spring-kafka@3.3.9",
-          "org.apache.kafka:kafka-clients@3.8.1"
+          "org.apache.kafka:kafka-clients@3.8.1",
+          "org.lz4:lz4-java@1.8.0"
         ],
         "upgradePath": [],
         "isUpgradable": false,
         "isPatchable": false,
         "isPinnable": false,
         "isRuntime": false,
-        "name": "org.apache.kafka:kafka-clients",
-        "version": "3.8.1",
-        "severityWithCritical": "high"
-      },
-      {
-        "id": "SNYK-JAVA-ORGAPACHEKAFKA-10350567",
-        "title": "Deserialization of Untrusted Data",
-        "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
-        "credit": [
-          "罗鑫",
-          "ra1lgun"
-        ],
-        "semver": {
-          "vulnerable": [
-            "[2.3.0,3.9.1)"
-          ]
-        },
-        "exploit": "Not Defined",
-        "fixedIn": [
-          "3.9.1"
-        ],
-        "patches": [],
-        "insights": {
-          "triageAdvice": null
-        },
-        "language": "java",
-        "severity": "high",
-        "cvssScore": 8.5,
-        "functions": [],
-        "malicious": false,
-        "isDisputed": false,
-        "moduleName": "org.apache.kafka:kafka-clients",
-        "references": [
-          {
-            "url": "https://github.com/apache/kafka/commit/4038edfafe43f01f262c47d81786442ad7ab0b03",
-            "title": "GitHub Commit"
-          },
-          {
-            "url": "https://kafka.apache.org/cve-list",
-            "title": "Kafka Security Advisories"
-          },
-          {
-            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2371368",
-            "title": "Red Hat Bugzilla Bug"
-          }
-        ],
-        "cvssDetails": [
-          {
-            "assigner": "Red Hat",
-            "severity": "high",
-            "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
-            "cvssV3BaseScore": 8,
-            "modificationTime": "2025-06-10T13:37:20.755942Z"
-          }
-        ],
-        "cvssSources": [
-          {
-            "type": "primary",
-            "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:A/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-            "assigner": "Snyk",
-            "severity": "high",
-            "baseScore": 8.5,
-            "cvssVersion": "4.0",
-            "modificationTime": "2025-06-13T16:12:04.925257Z"
-          },
-          {
-            "type": "secondary",
-            "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
-            "assigner": "Snyk",
-            "severity": "high",
-            "baseScore": 8,
-            "cvssVersion": "3.1",
-            "modificationTime": "2025-06-13T16:12:04.925257Z"
-          },
-          {
-            "type": "secondary",
-            "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
-            "assigner": "Red Hat",
-            "severity": "high",
-            "baseScore": 8,
-            "cvssVersion": "3.1",
-            "modificationTime": "2025-06-10T13:37:20.755942Z"
-          }
-        ],
-        "description": "## Overview\n[org.apache.kafka:kafka-clients](http://kafka.apache.org/) is a streaming platform that can publish and subscribe to streams of records, store streams of records in a fault-tolerant durable way, and process streams of records as they occur.\n\nAffected versions of this package are vulnerable to Deserialization of Untrusted Data due to improper handling of configuration data in the `sasl.jaas.config` property. An attacker can achieve arbitrary code execution by injecting a malicious configuration that causes the server to connect to an attacker-controlled LDAP server and deserialize untrusted data, leading to execution of deserialization gadget chains.\r\n\r\n**Note:**\r\n\r\nThis is only exploitable if the attacker has access to alterConfig for a cluster resource or Kafka Connect worker and can create or modify connectors with arbitrary Kafka client SASL JAAS configuration.\n\n## Details\n\nSerialization is a process of converting an object into a sequence of bytes which can be persisted to a disk or database or can be sent through streams. The reverse process of creating object from sequence of bytes is called deserialization. Serialization is commonly used for communication (sharing objects between multiple hosts) and persistence (store the object state in a file or a database). It is an integral part of popular protocols like _Remote Method Invocation (RMI)_, _Java Management Extension (JMX)_, _Java Messaging System (JMS)_, _Action Message Format (AMF)_, _Java Server Faces (JSF) ViewState_, etc.\n\n_Deserialization of untrusted data_ ([CWE-502](https://cwe.mitre.org/data/definitions/502.html)) is when the application deserializes untrusted data without sufficiently verifying that the resulting data will be valid, thus allowing the attacker to control the state or the flow of the execution.\n  \n## Remediation\nUpgrade `org.apache.kafka:kafka-clients` to version 3.9.1 or higher.\n## References\n- [GitHub Commit](https://github.com/apache/kafka/commit/4038edfafe43f01f262c47d81786442ad7ab0b03)\n- [Kafka Security Advisories](https://kafka.apache.org/cve-list)\n- [Red Hat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=2371368)\n",
-        "epssDetails": {
-          "percentile": "0.47405",
-          "probability": "0.00243",
-          "modelVersion": "v2025.03.14"
-        },
-        "identifiers": {
-          "CVE": [
-            "CVE-2025-27818"
-          ],
-          "CWE": [
-            "CWE-502"
-          ]
-        },
-        "packageName": "org.apache.kafka:kafka-clients",
-        "proprietary": false,
-        "creationTime": "2025-06-13T16:10:51.814621Z",
-        "functions_new": [],
-        "alternativeIds": [],
-        "disclosureTime": "2025-06-10T07:52:31Z",
-        "exploitDetails": {
-          "sources": [],
-          "maturityLevels": [
-            {
-              "type": "secondary",
-              "level": "Not Defined",
-              "format": "CVSSv3"
-            },
-            {
-              "type": "primary",
-              "level": "Not Defined",
-              "format": "CVSSv4"
-            }
-          ]
-        },
-        "packageManager": "maven",
-        "mavenModuleName": {
-          "groupId": "org.apache.kafka",
-          "artifactId": "kafka-clients"
-        },
-        "publicationTime": "2025-06-13T16:10:52.119702Z",
-        "severityBasedOn": "CVSS",
-        "modificationTime": "2025-06-13T16:12:04.925257Z",
-        "socialTrendAlert": false,
-        "packagePopularityRank": 99,
-        "from": [
-          "com.hobbyistprogrammer:kafka-chat-system@0.0.1-SNAPSHOT",
-          "org.springframework.kafka:spring-kafka@3.3.9",
-          "org.apache.kafka:kafka-clients@3.8.1"
-        ],
-        "upgradePath": [],
-        "isUpgradable": false,
-        "isPatchable": false,
-        "isPinnable": false,
-        "isRuntime": false,
-        "name": "org.apache.kafka:kafka-clients",
-        "version": "3.8.1",
+        "name": "org.lz4:lz4-java",
+        "version": "1.8.0",
         "severityWithCritical": "high"
       }
     ],
     "upgrade": {
-      "org.springframework.boot:spring-boot-starter-test@3.4.9": {
-        "upgradeTo": "org.springframework.boot:spring-boot-starter-test@3.4.10",
+      "ch.qos.logback:logback-core@1.5.18": {
+        "upgradeTo": "ch.qos.logback:logback-core@1.5.19",
         "upgrades": [
-          "org.springframework:spring-core@6.2.10"
+          "ch.qos.logback:logback-core@1.5.18"
         ],
         "vulns": [
-          "SNYK-JAVA-ORGSPRINGFRAMEWORK-12817817"
+          "SNYK-JAVA-CHQOSLOGBACK-13169722"
         ]
       },
-      "org.springframework.boot:spring-boot-starter-web@3.4.9": {
-        "upgradeTo": "org.springframework.boot:spring-boot-starter-web@3.4.11",
+      "io.netty:netty-codec-http@4.1.124.Final": {
+        "upgradeTo": "io.netty:netty-codec-http@4.1.129.Final",
+        "upgrades": [
+          "io.netty:netty-codec-http@4.1.124.Final",
+          "io.netty:netty-codec-http@4.1.124.Final",
+          "io.netty:netty-codec-http@4.1.124.Final"
+        ],
+        "vulns": [
+          "SNYK-JAVA-IONETTY-14423947",
+          "SNYK-JAVA-IONETTY-12485149",
+          "SNYK-JAVA-IONETTY-12485150"
+        ]
+      },
+      "io.netty:netty-codec-http2@4.1.124.Final": {
+        "upgradeTo": "io.netty:netty-codec-http2@4.1.125.Final",
+        "upgrades": [
+          "io.netty:netty-codec-http2@4.1.124.Final"
+        ],
+        "vulns": [
+          "SNYK-JAVA-IONETTY-12485151"
+        ]
+      },
+      "org.apache.kafka:kafka-clients@3.8.1": {
+        "upgradeTo": "org.apache.kafka:kafka-clients@3.9.1",
+        "upgrades": [
+          "org.apache.kafka:kafka-clients@3.8.1",
+          "org.apache.kafka:kafka-clients@3.8.1",
+          "org.apache.kafka:kafka-clients@3.8.1"
+        ],
+        "vulns": [
+          "SNYK-JAVA-ORGAPACHEKAFKA-10336719",
+          "SNYK-JAVA-ORGAPACHEKAFKA-10350513",
+          "SNYK-JAVA-ORGAPACHEKAFKA-10350567"
+        ]
+      },
+      "org.apache.tomcat.embed:tomcat-embed-core@10.1.44": {
+        "upgradeTo": "org.apache.tomcat.embed:tomcat-embed-core@10.1.47",
         "upgrades": [
           "org.apache.tomcat.embed:tomcat-embed-core@10.1.44",
           "org.apache.tomcat.embed:tomcat-embed-core@10.1.44"
@@ -2551,35 +2577,22 @@
           "SNYK-JAVA-ORGAPACHETOMCATEMBED-13733966"
         ]
       },
-      "org.springframework.boot:spring-boot-starter-webflux@3.4.9": {
-        "upgradeTo": "org.springframework.boot:spring-boot-starter-webflux@3.4.10",
-        "upgrades": [
-          "io.netty:netty-codec-http@4.1.124.Final",
-          "io.netty:netty-codec-http@4.1.124.Final",
-          "io.netty:netty-codec-http2@4.1.124.Final"
-        ],
-        "vulns": [
-          "SNYK-JAVA-IONETTY-12485149",
-          "SNYK-JAVA-IONETTY-12485150",
-          "SNYK-JAVA-IONETTY-12485151"
-        ]
-      },
-      "org.springframework.cloud:spring-cloud-starter@4.2.1": {
-        "upgradeTo": "org.springframework.cloud:spring-cloud-starter@4.3.0",
-        "upgrades": [
-          "org.bouncycastle:bcprov-jdk18on@1.78.1"
-        ],
-        "vulns": [
-          "SNYK-JAVA-ORGBOUNCYCASTLE-11789695"
-        ]
-      },
-      "org.springframework.security:spring-security-test@6.4.9": {
-        "upgradeTo": "org.springframework.security:spring-security-test@6.4.10",
+      "org.springframework.security:spring-security-core@6.4.9": {
+        "upgradeTo": "org.springframework.security:spring-security-core@6.4.10",
         "upgrades": [
           "org.springframework.security:spring-security-core@6.4.9"
         ],
         "vulns": [
           "SNYK-JAVA-ORGSPRINGFRAMEWORKSECURITY-12817818"
+        ]
+      },
+      "org.springframework:spring-core@6.2.10": {
+        "upgradeTo": "org.springframework:spring-core@6.2.11",
+        "upgrades": [
+          "org.springframework:spring-core@6.2.10"
+        ],
+        "vulns": [
+          "SNYK-JAVA-ORGSPRINGFRAMEWORK-12817817"
         ]
       }
     },
@@ -2592,7 +2605,7 @@
     "ignore": [],
     "patch": []
   },
-  "uniqueCount": 12,
+  "uniqueCount": 14,
   "projectName": "com.hobbyistprogrammer:kafka-chat-system",
   "displayTargetFile": "pom.xml",
   "hasUnknownVersions": false,

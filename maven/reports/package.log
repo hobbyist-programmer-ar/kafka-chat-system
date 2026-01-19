@@ -1,0 +1,125 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< com.hobbyistprogrammer:kafka-chat-system >--------------
+[INFO] Building kafka-chat-system 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ kafka-chat-system ---
+[INFO] Deleting /Users/aravindrajganesan/Workshop/BackEndDevelopment/SpringBoot/kafka-chat-system/target
+[INFO] 
+[INFO] --- jacoco:0.8.10:prepare-agent (default) @ kafka-chat-system ---
+[INFO] argLine set to -javaagent:/Users/aravindrajganesan/.m2/repository/org/jacoco/org.jacoco.agent/0.8.10/org.jacoco.agent-0.8.10-runtime.jar=destfile=/Users/aravindrajganesan/Workshop/BackEndDevelopment/SpringBoot/kafka-chat-system/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ kafka-chat-system ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ kafka-chat-system ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 3 source files with javac [debug parameters release 17] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ kafka-chat-system ---
+[INFO] skip non existing resourceDirectory /Users/aravindrajganesan/Workshop/BackEndDevelopment/SpringBoot/kafka-chat-system/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ kafka-chat-system ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug parameters release 17] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.0.0-M7:test (default-test) @ kafka-chat-system ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+Jan 18, 2026 12:51:20 PM org.junit.platform.launcher.core.LauncherConfigurationParameters loadClasspathResource
+WARNING: Discovered 3 'junit-platform.properties' configuration files on the classpath (see below); only the first (*) will be used.
+- jar:file:/Users/aravindrajganesan/.m2/repository/org/apache/kafka/kafka-clients/3.8.1/kafka-clients-3.8.1-test.jar!/junit-platform.properties (*)
+- jar:file:/Users/aravindrajganesan/.m2/repository/org/apache/kafka/kafka-server-common/3.8.1/kafka-server-common-3.8.1-test.jar!/junit-platform.properties
+- jar:file:/Users/aravindrajganesan/.m2/repository/org/apache/kafka/kafka_2.13/3.8.1/kafka_2.13-3.8.1-test.jar!/junit-platform.properties
+Jan 18, 2026 12:51:20 PM org.junit.platform.launcher.core.LauncherConfigurationParameters loadClasspathResource
+WARNING: Discovered 3 'junit-platform.properties' configuration files on the classpath (see below); only the first (*) will be used.
+- jar:file:/Users/aravindrajganesan/.m2/repository/org/apache/kafka/kafka-clients/3.8.1/kafka-clients-3.8.1-test.jar!/junit-platform.properties (*)
+- jar:file:/Users/aravindrajganesan/.m2/repository/org/apache/kafka/kafka-server-common/3.8.1/kafka-server-common-3.8.1-test.jar!/junit-platform.properties
+- jar:file:/Users/aravindrajganesan/.m2/repository/org/apache/kafka/kafka_2.13/3.8.1/kafka_2.13-3.8.1-test.jar!/junit-platform.properties
+Jan 18, 2026 12:51:20 PM org.junit.platform.launcher.core.LauncherConfigurationParameters loadClasspathResource
+WARNING: Discovered 3 'junit-platform.properties' configuration files on the classpath (see below); only the first (*) will be used.
+- jar:file:/Users/aravindrajganesan/.m2/repository/org/apache/kafka/kafka-clients/3.8.1/kafka-clients-3.8.1-test.jar!/junit-platform.properties (*)
+- jar:file:/Users/aravindrajganesan/.m2/repository/org/apache/kafka/kafka-server-common/3.8.1/kafka-server-common-3.8.1-test.jar!/junit-platform.properties
+- jar:file:/Users/aravindrajganesan/.m2/repository/org/apache/kafka/kafka_2.13/3.8.1/kafka_2.13-3.8.1-test.jar!/junit-platform.properties
+[INFO] Running com.hobbyistprogrammer.kafka_chat_system.KafkaChatSystemApplicationTests
+12:51:21.094 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.hobbyistprogrammer.kafka_chat_system.KafkaChatSystemApplicationTests]: KafkaChatSystemApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:51:21.173 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.hobbyistprogrammer.kafka_chat_system.KafkaChatSystemApplication for test class com.hobbyistprogrammer.kafka_chat_system.KafkaChatSystemApplicationTests
+12:51:21.397 [main] INFO org.springframework.boot.devtools.restart.RestartApplicationListener -- Restart disabled due to context in which it is running
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.9)
+
+2026-01-18T12:51:21.595+05:30  INFO 11619 --- [           main] [                                                 ] c.h.k.KafkaChatSystemApplicationTests    : Starting KafkaChatSystemApplicationTests using Java 17.0.9 with PID 11619 (started by aravindrajganesan in /Users/aravindrajganesan/Workshop/BackEndDevelopment/SpringBoot/kafka-chat-system)
+2026-01-18T12:51:21.597+05:30  INFO 11619 --- [           main] [                                                 ] c.h.k.KafkaChatSystemApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2026-01-18T12:51:22.294+05:30  INFO 11619 --- [           main] [                                                 ] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-01-18T12:51:22.295+05:30  INFO 11619 --- [           main] [                                                 ] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2026-01-18T12:51:22.307+05:30  INFO 11619 --- [           main] [                                                 ] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JDBC repository interfaces.
+2026-01-18T12:51:22.312+05:30  INFO 11619 --- [           main] [                                                 ] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-01-18T12:51:22.312+05:30  INFO 11619 --- [           main] [                                                 ] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-18T12:51:22.315+05:30  INFO 11619 --- [           main] [                                                 ] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 0 ms. Found 0 JPA repository interfaces.
+2026-01-18T12:51:22.422+05:30  INFO 11619 --- [           main] [                                                 ] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2026-01-18T12:51:22.427+05:30  INFO 11619 --- [           main] [                                                 ] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2026-01-18T12:51:22.460+05:30  INFO 11619 --- [           main] [                                                 ] o.s.cloud.context.scope.GenericScope     : BeanFactory id=a002b245-0cd1-38f8-a658-e336179f2b86
+2026-01-18T12:51:22.757+05:30  INFO 11619 --- [           main] [                                                 ] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-01-18T12:51:22.935+05:30  INFO 11619 --- [           main] [                                                 ] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:350ca594-86c9-4fe4-b43d-3edfd18cdb4c user=SA
+2026-01-18T12:51:22.937+05:30  INFO 11619 --- [           main] [                                                 ] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-01-18T12:51:22.975+05:30  INFO 11619 --- [           main] [                                                 ] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-18T12:51:23.012+05:30  INFO 11619 --- [           main] [                                                 ] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2026-01-18T12:51:23.032+05:30  INFO 11619 --- [           main] [                                                 ] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-01-18T12:51:23.204+05:30  INFO 11619 --- [           main] [                                                 ] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-18T12:51:23.268+05:30  INFO 11619 --- [           main] [                                                 ] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-18T12:51:23.781+05:30  INFO 11619 --- [           main] [                                                 ] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-18T12:51:23.784+05:30  INFO 11619 --- [           main] [                                                 ] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-18T12:51:23.935+05:30  WARN 11619 --- [           main] [                                                 ] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-18T12:51:24.393+05:30  WARN 11619 --- [           main] [                                                 ] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: f78f204a-7463-40e2-bf3a-da7862033db2
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-01-18T12:51:24.408+05:30  INFO 11619 --- [           main] [                                                 ] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-18T12:51:24.481+05:30  INFO 11619 --- [           main] [                                                 ] o.s.c.f.web.mvc.FunctionHandlerMapping   : FunctionCatalog: org.springframework.cloud.function.context.catalog.BeanFactoryAwareFunctionRegistry@2b96995d
+2026-01-18T12:51:24.488+05:30  INFO 11619 --- [           main] [                                                 ] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-01-18T12:51:25.172+05:30  INFO 11619 --- [           main] [                                                 ] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2026-01-18T12:51:25.172+05:30  INFO 11619 --- [           main] [                                                 ] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 1 subscriber(s).
+2026-01-18T12:51:25.173+05:30  INFO 11619 --- [           main] [                                                 ] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2026-01-18T12:51:25.222+05:30  INFO 11619 --- [           main] [                                                 ] c.h.k.KafkaChatSystemApplicationTests    : Started KafkaChatSystemApplicationTests in 3.836 seconds (process running for 4.693)
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.604 s - in com.hobbyistprogrammer.kafka_chat_system.KafkaChatSystemApplicationTests
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ kafka-chat-system ---
+[INFO] Building jar: /Users/aravindrajganesan/Workshop/BackEndDevelopment/SpringBoot/kafka-chat-system/target/kafka-chat-system-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot:3.4.9:repackage (repackage) @ kafka-chat-system ---
+[INFO] Replacing main artifact /Users/aravindrajganesan/Workshop/BackEndDevelopment/SpringBoot/kafka-chat-system/target/kafka-chat-system-0.0.1-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /Users/aravindrajganesan/Workshop/BackEndDevelopment/SpringBoot/kafka-chat-system/target/kafka-chat-system-0.0.1-SNAPSHOT.jar.original
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.272 s
+[INFO] Finished at: 2026-01-18T12:51:26+05:30
+[INFO] ------------------------------------------------------------------------

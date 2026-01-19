@@ -1,13 +1,18 @@
 # Snyk Security Report
 
-Found 7 vulnerabilities.
+Found 12 vulnerabilities.
 
-| Package | Severity | Vulnerable Version | Fixed in Version | CVE Report Link |
-|---|---|---|---|---|
-| io.netty:netty-codec-http | High | 4.1.124.Final | 4.1.125.Final, 4.2.5.Final | [View Details](#) |
-| io.netty:netty-codec-http | High | 4.1.124.Final | 4.1.125.Final | [View Details](#) |
-| io.netty:netty-codec-http2 | High | 4.1.124.Final | 4.1.125.Final | [View Details](#) |
-| org.apache.kafka:kafka-clients | High | 3.8.1 | 3.9.1 | [View Details](#) |
-| org.apache.kafka:kafka-clients | High | 3.8.1 | 3.9.1 | [View Details](#) |
-| org.apache.kafka:kafka-clients | High | 3.8.1 | 3.9.1 | [View Details](#) |
-| org.bouncycastle:bcprov-jdk18on | Medium | 1.78.1 | 1.79 | [View Details](#) |
+| Package | Severity | Vulnerable Version | Fixed in Version | Introduce Through | CVE Report Link |
+|---|---|---|---|---|---|
+| ch.qos.logback:logback-core | Medium | 1.5.18 | 1.5.19 | com.hobbyistprogrammer:kafka-chat-system@0.0.1-SNAPSHOT-> org.springframework.kafka:spring-kafka-test@3.3.9-> org.apache.zookeeper:zookeeper@3.8.4-> ch.qos.logback:logback-core@1.5.18 | [View Details](#) |
+| io.netty:netty-codec-http | High | 4.1.124.Final | 4.1.125.Final, 4.2.5.Final | com.hobbyistprogrammer:kafka-chat-system@0.0.1-SNAPSHOT-> org.springframework.boot:spring-boot-starter-webflux@3.4.9-> org.springframework.boot:spring-boot-starter-reactor-netty@3.4.9-> io.projectreactor.netty:reactor-netty-http@1.2.9-> io.netty:netty-codec-http@4.1.124.Final | [View Details](#) |
+| io.netty:netty-codec-http | High | 4.1.124.Final | 4.1.125.Final | com.hobbyistprogrammer:kafka-chat-system@0.0.1-SNAPSHOT-> org.springframework.boot:spring-boot-starter-webflux@3.4.9-> org.springframework.boot:spring-boot-starter-reactor-netty@3.4.9-> io.projectreactor.netty:reactor-netty-http@1.2.9-> io.netty:netty-codec-http@4.1.124.Final | [View Details](#) |
+| io.netty:netty-codec-http2 | High | 4.1.124.Final | 4.1.125.Final | com.hobbyistprogrammer:kafka-chat-system@0.0.1-SNAPSHOT-> org.springframework.boot:spring-boot-starter-webflux@3.4.9-> org.springframework.boot:spring-boot-starter-reactor-netty@3.4.9-> io.projectreactor.netty:reactor-netty-http@1.2.9-> io.netty:netty-codec-http2@4.1.124.Final | [View Details](#) |
+| org.apache.kafka:kafka-clients | High | 3.8.1 | 3.9.1 | com.hobbyistprogrammer:kafka-chat-system@0.0.1-SNAPSHOT-> org.springframework.kafka:spring-kafka@3.3.9-> org.apache.kafka:kafka-clients@3.8.1 | [View Details](#) |
+| org.apache.kafka:kafka-clients | High | 3.8.1 | 3.9.1 | com.hobbyistprogrammer:kafka-chat-system@0.0.1-SNAPSHOT-> org.springframework.kafka:spring-kafka@3.3.9-> org.apache.kafka:kafka-clients@3.8.1 | [View Details](#) |
+| org.apache.kafka:kafka-clients | High | 3.8.1 | 3.9.1 | com.hobbyistprogrammer:kafka-chat-system@0.0.1-SNAPSHOT-> org.springframework.kafka:spring-kafka@3.3.9-> org.apache.kafka:kafka-clients@3.8.1 | [View Details](#) |
+| org.apache.tomcat.embed:tomcat-embed-core | Medium | 10.1.44 | 9.0.110, 10.1.47, 11.0.12 | com.hobbyistprogrammer:kafka-chat-system@0.0.1-SNAPSHOT-> org.springframework.boot:spring-boot-starter-web@3.4.9-> org.springframework.boot:spring-boot-starter-tomcat@3.4.9-> org.apache.tomcat.embed:tomcat-embed-core@10.1.44 | [View Details](#) |
+| org.apache.tomcat.embed:tomcat-embed-core | High | 10.1.44 | 9.0.109, 10.1.45, 11.0.11 | com.hobbyistprogrammer:kafka-chat-system@0.0.1-SNAPSHOT-> org.springframework.boot:spring-boot-starter-web@3.4.9-> org.springframework.boot:spring-boot-starter-tomcat@3.4.9-> org.apache.tomcat.embed:tomcat-embed-core@10.1.44 | [View Details](#) |
+| org.bouncycastle:bcprov-jdk18on | Medium | 1.78.1 | 1.79 | com.hobbyistprogrammer:kafka-chat-system@0.0.1-SNAPSHOT-> org.springframework.cloud:spring-cloud-starter@4.2.1-> org.bouncycastle:bcprov-jdk18on@1.78.1 | [View Details](#) |
+| org.springframework:spring-core | High | 6.2.10 | 6.2.11 | com.hobbyistprogrammer:kafka-chat-system@0.0.1-SNAPSHOT-> org.springframework.boot:spring-boot-starter-test@3.4.9-> org.springframework:spring-core@6.2.10 | [View Details](#) |
+| org.springframework.security:spring-security-core | High | 6.4.9 | 6.4.10, 6.5.4 | com.hobbyistprogrammer:kafka-chat-system@0.0.1-SNAPSHOT-> org.springframework.security:spring-security-test@6.4.9-> org.springframework.security:spring-security-core@6.4.9 | [View Details](#) |
