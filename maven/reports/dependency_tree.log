@@ -134,8 +134,6 @@
 [INFO] |  +- org.springframework.boot:spring-boot:jar:3.4.9:compile
 [INFO] |  \- org.springframework.boot:spring-boot-autoconfigure:jar:3.4.9:compile
 [INFO] +- com.h2database:h2:jar:2.3.232:runtime
-[INFO] +- org.postgresql:postgresql:jar:42.7.7:runtime
-[INFO] |  \- org.checkerframework:checker-qual:jar:3.49.3:runtime
 [INFO] +- org.projectlombok:lombok:jar:1.18.38:compile (optional)
 [INFO] +- org.springframework:spring-core:jar:6.2.10:compile
 [INFO] |  \- org.springframework:spring-jcl:jar:6.2.10:compile
@@ -203,6 +201,7 @@
 [INFO] |  |  +- org.apache.kafka:kafka-tools-api:jar:3.8.1:test
 [INFO] |  |  +- org.apache.kafka:kafka-storage:jar:3.8.1:test
 [INFO] |  |  |  \- com.github.ben-manes.caffeine:caffeine:jar:3.1.8:test
+[INFO] |  |  |     +- org.checkerframework:checker-qual:jar:3.37.0:test
 [INFO] |  |  |     \- com.google.errorprone:error_prone_annotations:jar:2.21.1:test
 [INFO] |  |  +- net.sourceforge.argparse4j:argparse4j:jar:0.7.0:test
 [INFO] |  |  +- commons-validator:commons-validator:jar:1.7:test
@@ -230,6 +229,6 @@
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  0.954 s
-[INFO] Finished at: 2026-01-18T11:33:36+05:30
+[INFO] Total time:  0.908 s
+[INFO] Finished at: 2026-03-15T15:12:43+05:30
 [INFO] ------------------------------------------------------------------------
